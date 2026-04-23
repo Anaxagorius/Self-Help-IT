@@ -1,0 +1,1712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="IT Self-Help Portal for Valley Credit Union staff – troubleshoot common problems before calling the IT Service Desk." />
+  <title>IT Self-Help Portal | Valley Credit Union</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏦</text></svg>" />
+</head>
+<body>
+
+<!-- Skip to content (accessibility) -->
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<!-- ══════════════════ HEADER ══════════════════ -->
+<header id="site-header" role="banner">
+  <div class="header-inner">
+    <a href="#" class="header-logo" aria-label="IT Self-Help Portal Home">
+      <span class="lighthouse-icon" aria-hidden="true">🏦</span>
+      <span class="header-logo-text">
+        <span class="site-name">IT Self-Help Portal</span>
+        <span class="site-sub">Valley Credit Union</span>
+      </span>
+    </a>
+
+    <div class="search-wrapper" role="search">
+      <label for="search-input" class="visually-hidden">Search for help</label>
+      <input
+        type="search"
+        id="search-input"
+        placeholder="🔍  Search for help… (e.g. printer, password, VPN)"
+        autocomplete="off"
+        spellcheck="false"
+      />
+      <button class="search-btn" aria-label="Search">&#128269;</button>
+    </div>
+
+    <button id="theme-toggle" aria-label="Switch to dark mode">🌙 Dark</button>
+    <a href="#call-it-section" class="call-it-badge">📞 Call IT Now</a>
+  </div>
+</header>
+
+<!-- ══════════════════ CATEGORY NAV ══════════════════ -->
+<nav id="cat-nav" aria-label="Help Categories">
+  <div class="cat-nav-inner">
+    <a href="index.html" class="cat-nav-home">🏠 Home</a>
+    <a href="passwords.html" class="cat-nav-link">🔐 Passwords</a>
+    <a href="network.html" class="cat-nav-link">🌐 Network</a>
+    <a href="email.html" class="cat-nav-link">📧 Email</a>
+    <a href="printers.html" class="cat-nav-link">🖨️ Printers</a>
+    <a href="computer.html" class="cat-nav-link">💻 Computer</a>
+    <a href="phones.html" class="cat-nav-link">📞 Phones</a>
+    <a href="banking.html" class="cat-nav-link">🏦 Banking</a>
+    <a href="mambu.html" class="cat-nav-link">🐘 Mambu</a>
+    <a href="software.html" class="cat-nav-link">💾 Software</a>
+  </div>
+</nav>
+
+<!-- ══════════════════ ALERT BANNER (shown if there's a known outage) ══ -->
+<div id="alert-banner" role="alert" aria-live="polite">
+  <span class="alert-icon">⚠️</span>
+  <span id="alert-message">Known issue: Some staff may be experiencing slow internet speeds. Our team is aware and working on it. No action needed on your end.</span>
+  <button class="alert-close" id="alert-close" aria-label="Dismiss alert">✕</button>
+</div>
+
+<!-- ══════════════════ HERO ══════════════════ -->
+<section id="hero" aria-label="Welcome">
+  <div class="hero-inner">
+    <div class="hero-tag">⚓ Your Friendly IT Support Guide</div>
+    <h1>Having a bit of trouble?<br/>We've got ya covered.</h1>
+    <p>
+      Before you give us a ring, have a look through here, chances are your
+      fix is just a few clicks away. And if not, we're always happy to help.
+    </p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="stat-num">9</span>
+        <span class="stat-label">Help Categories</span>
+      </div>
+      <div class="hero-stat">
+        <span class="stat-num">45</span>
+        <span class="stat-label">Step-by-Step Guides</span>
+      </div>
+      <div class="hero-stat">
+        <span class="stat-num">~5 min</span>
+        <span class="stat-label">Avg. Fix Time</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ MAIN ══════════════════ -->
+<main id="main-content">
+
+  <!-- Search results (hidden until user searches) -->
+  <section id="search-results-section" aria-label="Search Results">
+    <div class="section-header">
+      <h2>Search Results</h2>
+      <div class="section-divider"></div>
+    </div>
+    <ul class="search-results-list" id="search-results-list" aria-live="polite"></ul>
+  </section>
+
+  <!-- No results message -->
+  <div id="no-results" role="status" aria-live="polite">
+    <div class="no-results-icon">🌊</div>
+    <h3>Nothing washed ashore…</h3>
+    <p>
+      Couldn't find a match. Try different words, or scroll through the
+      categories below. If all else fails, <a href="#call-it-section">give IT a shout</a>!
+    </p>
+  </div>
+
+  <!-- ── System Status Board ──────────────────────── -->
+  <section id="status-section" aria-label="System Status">
+    <div class="section-header">
+      <h2>System Status</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="status-board">
+      <div class="status-board-header">
+        <span class="status-dot" aria-hidden="true"></span>
+        All systems monitored &nbsp;·&nbsp; <span id="status-last-updated">Checking…</span>
+      </div>
+      <ul class="status-items" aria-label="System status list">
+        <li class="status-item">
+          <span class="status-indicator status-ok" aria-label="Operational"></span>
+          <span class="status-name">Core Banking (Temenos / DNA)</span>
+          <span class="status-label label-ok">Operational</span>
+        </li>
+        <li class="status-item">
+          <span class="status-indicator status-ok" aria-label="Operational"></span>
+          <span class="status-name">Email (Microsoft 365)</span>
+          <span class="status-label label-ok">Operational</span>
+        </li>
+        <li class="status-item">
+          <span class="status-indicator status-ok" aria-label="Operational"></span>
+          <span class="status-name">VPN / Remote Access</span>
+          <span class="status-label label-ok">Operational</span>
+        </li>
+        <li class="status-item">
+          <span class="status-indicator status-ok" aria-label="Operational"></span>
+          <span class="status-name">Internet &amp; Wi-Fi</span>
+          <span class="status-label label-ok">Operational</span>
+        </li>
+        <li class="status-item">
+          <span class="status-indicator status-ok" aria-label="Operational"></span>
+          <span class="status-name">Microsoft Teams / Phone</span>
+          <span class="status-label label-ok">Operational</span>
+        </li>
+        <li class="status-item">
+          <span class="status-indicator status-ok" aria-label="Operational"></span>
+          <span class="status-name">File Shares &amp; OneDrive</span>
+          <span class="status-label label-ok">Operational</span>
+        </li>
+        <li class="status-item">
+          <span class="status-indicator status-ok" aria-label="Operational"></span>
+          <span class="status-name">Multi-Factor Authentication</span>
+          <span class="status-label label-ok">Operational</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── Quick Category Links ──────────────────────── -->
+  <div id="quick-links" aria-label="Jump to a category">
+    <div class="section-header">
+      <h2>Jump to a Category</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="quick-links-grid">
+      <div class="quick-link-card" data-href="passwords.html" data-target="cat-passwords" role="button" tabindex="0" aria-label="Passwords &amp; Accounts">
+        <span class="ql-icon">🔐</span>
+        <span class="ql-label">Passwords &amp; Accounts</span>
+      </div>
+      <div class="quick-link-card" data-href="network.html" data-target="cat-network" role="button" tabindex="0" aria-label="Internet &amp; Network">
+        <span class="ql-icon">🌐</span>
+        <span class="ql-label">Internet &amp; Network</span>
+      </div>
+      <div class="quick-link-card" data-href="email.html" data-target="cat-email" role="button" tabindex="0" aria-label="Email &amp; Calendar">
+        <span class="ql-icon">📧</span>
+        <span class="ql-label">Email &amp; Calendar</span>
+      </div>
+      <div class="quick-link-card" data-href="printers.html" data-target="cat-printers" role="button" tabindex="0" aria-label="Printers &amp; Scanners">
+        <span class="ql-icon">🖨️</span>
+        <span class="ql-label">Printers &amp; Scanners</span>
+      </div>
+      <div class="quick-link-card" data-href="computer.html" data-target="cat-computer" role="button" tabindex="0" aria-label="Computer Performance">
+        <span class="ql-icon">💻</span>
+        <span class="ql-label">Computer Performance</span>
+      </div>
+      <div class="quick-link-card" data-href="phones.html" data-target="cat-phones" role="button" tabindex="0" aria-label="Phones &amp; Teams">
+        <span class="ql-icon">📞</span>
+        <span class="ql-label">Phones &amp; Teams</span>
+      </div>
+      <div class="quick-link-card" data-href="banking.html" data-target="cat-banking" role="button" tabindex="0" aria-label="Core Banking Systems">
+        <span class="ql-icon">🏦</span>
+        <span class="ql-label">Core Banking Systems</span>
+      </div>
+      <div class="quick-link-card" data-href="mambu.html" data-target="cat-mambu" role="button" tabindex="0" aria-label="Mambu">
+        <span class="ql-icon">🐘</span>
+        <span class="ql-label">Mambu</span>
+      </div>
+      <div class="quick-link-card" data-href="software.html" data-target="cat-software" role="button" tabindex="0" aria-label="Software &amp; Apps">
+        <span class="ql-icon">💾</span>
+        <span class="ql-label">Software &amp; Apps</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════════
+       ALL CATEGORY SECTIONS
+       ════════════════════════════════════════════════ -->
+  <div id="main-categories">
+
+    <!-- ────────────────────────────────────────────
+         CATEGORY 1 – Passwords & Accounts
+         ──────────────────────────────────────────── -->
+    <section class="category-section" id="cat-passwords" aria-labelledby="h-passwords">
+      <div class="category-header">
+        <div class="category-icon icon-bg-blue" aria-hidden="true">🔐</div>
+        <div>
+          <h2 id="h-passwords">Passwords &amp; Accounts</h2>
+          <p class="category-desc">Locked out? Expired? MFA acting up? Start here.</p>
+        </div>
+      </div>
+
+      <div class="guides-grid">
+
+        <!-- Locked out of Windows -->
+        <div class="guide-card" data-id="pw-locked">
+          <div class="guide-header">
+            <div class="guide-title-area">
+              <div class="guide-title">🔒 My computer is locked / I can't log in</div>
+              <div class="guide-tags">
+                <span class="guide-tag tag-common">Most Common</span>
+                <span class="guide-tag tag-easy">Easy Fix</span>
+              </div>
+            </div>
+            <span class="guide-chevron" aria-hidden="true">▼</span>
+          </div>
+          <div class="guide-body">
+            <div class="guide-content">
+              <p class="guide-intro">
+                Nine times out of ten this is a wrong password or caps lock situation. Don't
+                panic — let's sort it out step by step.
+              </p>
+              <ol class="steps-list">
+                <li>
+                  <span class="step-num">1</span>
+                  <span class="step-text">Make sure <strong>Caps Lock</strong> is off — look for the indicator light on your keyboard or the 🔒 icon on your screen.</span>
+                </li>
+                <li>
+                  <span class="step-num">2</span>
+                  <span class="step-text">Try your password again carefully. You have <strong>3 attempts</strong> before the account locks. Take your time.</span>
+                </li>
+                <li>
+                  <span class="step-num">3</span>
+                  <span class="step-text">If you've recently changed your password on another device, use the <strong>newest password</strong>.</span>
+                </li>
+                <li>
+                  <span class="step-num">4</span>
+                  <span class="step-text">Check that your computer is on the network (ethernet cable plugged in or Wi-Fi connected). If offline, it may not be able to verify your credentials.</span>
+                </li>
+                <li>
+                  <span class="step-num">5</span>
+                  <span class="step-text">If you're on the login screen and see a <strong>"Reset password"</strong> or <strong>"I forgot my PIN"</strong> link, click that and follow the prompts.</span>
+                </li>
+              </ol>
+              <div class="call-box">
+                <span class="box-icon">📞</span>
+                <span>If your account is fully locked out (no more attempts left), <strong>stop here and call IT</strong> — we need to unlock it from our end. Do not keep guessing!</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Forgot password -->
+        <div class="guide-card" data-id="pw-forgot">
+          <div class="guide-header">
+            <div class="guide-title-area">
+              <div class="guide-title">🔑 I forgot my password / need to reset it</div>
+              <div class="guide-tags">
+                <span class="guide-tag tag-common">Common</span>
+                <span class="guide-tag tag-easy">Easy Fix</span>
+              </div>
+            </div>
+            <span class="guide-chevron" aria-hidden="true">▼</span>
+          </div>
+          <div class="guide-body">
+            <div class="guide-content">
+              <p class="guide-intro">You can reset your own Microsoft 365 / Windows password using the self-service portal — no IT call needed in most cases!</p>
+              <ol class="steps-list">
+                <li>
+                  <span class="step-num">1</span>
+                  <span class="step-text">On the Windows login screen, click <strong>"I forgot my PIN"</strong> or <strong>"Reset password"</strong> if visible.</span>
+                </li>
+                <li>
+                  <span class="step-num">2</span>
+                  <span class="step-text">From any device (phone or another computer), go to <code>aka.ms/sspr</code> — this is Microsoft's self-service password reset page.</span>
+                </li>
+                <li>
+                  <span class="step-num">3</span>
+                  <span class="step-text">Enter your <strong>work email address</strong> and verify you're not a robot.</span>
+                </li>
+                <li>
+                  <span class="step-num">4</span>
+                  <span class="step-text">Choose your verification method (text to your registered mobile number, or via the Microsoft Authenticator app).</span>
+                </li>
+                <li>
+                  <span class="step-num">5</span>
+                  <span class="step-text">Follow the prompts to create a <strong>new strong password</strong>. Use at least 12 characters, mixing letters, numbers, and symbols.</span>
+                </li>
+                <li>
+                  <span class="step-num">6</span>
+                  <span class="step-text">Return to your computer and log in with your new password. If it still fails, wait 5 minutes for the change to sync and try again.</span>
+                </li>
+              </ol>
+              <div class="tip-box">
+                <span class="box-icon">💡</span>
+                <span><strong>Password tip:</strong> Try a passphrase like <em>"Bluenose!Sails2024"</em> — easy to remember, hard to crack!</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MFA issues -->
+        <div class="guide-card" data-id="pw-mfa">
+          <div class="guide-header">
+            <div class="guide-title-area">
+              <div class="guide-title">📱 Multi-Factor Authentication (MFA) isn't working</div>
+              <div class="guide-tags">
+                <span class="guide-tag tag-common">Common</span>
+                <span class="guide-tag tag-moderate">Moderate</span>
+              </div>
+            </div>
+            <span class="guide-chevron" aria-hidden="true">▼</span>
+          </div>
+          <div class="guide-body">
+            <div class="guide-content">
+              <p class="guide-intro">MFA keeps us all safe — it's a must here at the credit union. Here's how to sort out the most common hiccups.</p>
+              <ol class="steps-list">
+                <li>
+                  <span class="step-num">1</span>
+                  <span class="step-text"><strong>No notification on your phone?</strong> Open the <strong>Microsoft Authenticator</strong> app, tap the account, and use the 6-digit code shown instead of waiting for a push notification.</span>
+                </li>
+                <li>
+                  <span class="step-num">2</span>
+                  <span class="step-text"><strong>Code not working?</strong> Your phone's time might be out of sync. Go to <strong>Settings → Date &amp; Time → Set Automatically</strong> and ensure this is enabled.</span>
+                </li>
+                <li>
+                  <span class="step-num">3</span>
+                  <span class="step-text"><strong>New phone?</strong> You'll need to re-register your device. Visit <code>aka.ms/mysecurityinfo</code> from a computer where you're already logged in, and add your new phone.</span>
+                </li>
+                <li>
+                  <span class="step-num">4</span>
+                  <span class="step-text"><strong>App deleted by accident?</strong> Re-download <strong>Microsoft Authenticator</strong> from the App Store or Google Play, then see step 3.</span>
+                </li>
+              </ol>
+              <div class="call-box">
+                <span class="box-icon">📞</span>
+                <span>If you can't receive codes at all and can't get in anywhere, <strong>call IT right away</strong>. MFA lockouts need to be resolved by our team to keep your account secure.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Password expiry -->
+        <div class="guide-card" data-id="pw-expiry">
+          <div class="guide-header">
+            <div class="guide-title-area">
+              <div class="guide-title">⏰ I'm getting a "Password will expire" warning</div>
+              <div class="guide-tags">
+                <span class="guide-tag tag-easy">Easy Fix</span>
+              </div>
+            </div>
+            <span class="guide-chevron" aria-hidden="true">▼</span>
+          </div>
+          <div class="guide-body">
+            <div class="guide-content">
+              <p class="guide-intro">Don't wait until it expires — change it now and avoid the hassle!</p>
+              <ol class="steps-list">
+                <li>
+                  <span class="step-num">1</span>
+                  <span class="step-text">Press <code>Ctrl</code> + <code>Alt</code> + <code>Delete</code> on your Windows computer.</span>
+                </li>
+                <li>
+                  <span class="step-num">2</span>
+                  <span class="step-text">Click <strong>"Change a password"</strong>.</span>
+                </li>
+                <li>
+                  <span class="step-num">3</span>
+                  <span class="step-text">Enter your current password, then your new password twice. Click the arrow or press <code>Enter</code>.</span>
+                </li>
+              </ol>
+              <div class="tip-box">
+                <span class="box-icon">💡</span>
+                <span>Your new password cannot be the same as your last 10 passwords, and must be at least 12 characters long.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /guides-grid -->
+    </section>
+
+    <!-- ────────────────────────────────────────────
+         CATEGORY 2 – Internet & Network
+         ──────────────────────────────────────────── -->
+    <section class="category-section" id="cat-network" aria-labelledby="h-network">
+      <div class="category-header">
+        <div class="category-icon icon-bg-teal" aria-hidden="true">🌐</div>
+        <div>
+          <h2 id="h-network">Internet &amp; Network</h2>
+          <p class="category-desc">Can't connect? VPN woes? Slow as molasses? Try these first.</p>
+        </div>
+      </div>
+
+      <div class="guides-grid">
+
+        <div class="guide-card" data-id="net-nonet">
+          <div class="guide-header">
+            <div class="guide-title-area">
+              <div class="guide-title">🌐 No internet connection at all</div>
+              <div class="guide-tags">
+                <span class="guide-tag tag-common">Most Common</span>
+                <span class="guide-tag tag-easy">Easy Fix</span>
+              </div>
+            </div>
+            <span class="guide-chevron" aria-hidden="true">▼</span>
+          </div>
+          <div class="guide-body">
+            <div class="guide-content">
+              <p class="guide-intro">First things first — is it just you or is the whole office down? Check in with your neighbour!</p>
+              <ol class="steps-list">
+                <li>
+                  <span class="step-num">1</span>
+                  <span class="step-text">Check if the <strong>ethernet cable</strong> (the thick grey cord) is firmly plugged into the back of your computer AND the wall socket.</span>
+                </li>
+                <li>
+                  <span class="step-num">2</span>
+                  <span class="step-text">Look at the <strong>network light</strong> on your computer (usually near where the cable plugs in). It should be blinking or solid. No light = no connection.</span>
+                </li>
+                <li>
+                  <span class="step-num">3</span>
+                  <span class="step-text">Try <strong>unplugging the cable and plugging it back in</strong> firmly — sometimes that's all it takes!</span>
+                </li>
+                <li>
+                  <span class="step-num">4</span>
+                  <span class="step-text">Right-click the network icon (bottom right of your taskbar) → <strong>"Troubleshoot problems"</strong>. Let Windows try to auto-fix it.</span>
+                </li>
+                <li>
+                  <span class="step-num">5</span>
+                  <span class="step-text">Try <strong>restarting your computer</strong>. A full restart (not sleep) clears most network glitches.</span>
+                </li>
+              </ol>
+              <div class="warn-box">
+                <span class="box-icon">⚠️</span>
+                <span>If multiple people in the office have no internet, it's likely a wider outage. Check the <a href="#status-section">System Status board</a> above, and if it's not listed there, give IT a call.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="guide-card" data-id="net-slow">
+          <div class="guide-header">
+            <div class="guide-title-area">
+              <div class="guide-title">🐌 Internet is painfully slow</div>
+              <div class="guide-tags">
+                <span class="guide-tag tag-common">Common</span>
+                <span class="guide-tag tag-easy">Easy Fix</span>
+              </div>
+            </div>
+            <span class="guide-chevron" aria-hidden="true">▼</span>
+          </div>
+          <div class="guide-body">
+            <div class="guide-content">
+              <p class="guide-intro">Slow internet is frustrating — let's narrow down the cause.</p>
+              <ol class="steps-list">
+                <li>
+                  <span class="step-num">1</span>
+                  <span class="step-text">Close all <strong>browser tabs and apps</strong> you're not using. Too many open tabs (especially video or streaming) can slow things right down.</span>
+                </li>
+                <li>
+                  <span class="step-num">2</span>
+                  <span class="step-text"><strong>Clear your browser cache:</strong> In Chrome or Edge, press <code>Ctrl</code> + <code>Shift</code> + <code>Delete</code>, select "All time" and check "Cached images and files". Click Clear.</span>
+                </li>
+                <li>
+                  <span class="step-num">3</span>
+                  <span class="step-text">Check if any large files are being downloaded or uploaded in the background (Teams, OneDrive sync, Windows Update).</span>
+                </li>
+                <li>
+                  <span class="step-num">4</span>
+                  <span class="step-text">Restart your browser. If still slow, restart your computer.</span>
+                </li>
+                <li>
+                  <span class="step-num">5</span>
+                  <span class="step-text">Run a quick speed test at <code>fast.com</code> or <code>speedtest.net</code>. If you're getting under 10 Mbps, call IT with that number.</span>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <div class="guide-card" data-id="net-vpn">
+          <div class="guide-header">
+            <div class="guide-title-area">
+              <div class="guide-title">🔒 VPN won't connect (working from home)</div>
+              <div class="guide-tags">
+                <span class="guide-tag tag-common">Common</span>
+                <span class="guide-tag tag-moderate">Moderate</span>
+              </div>
+            </div>
+            <span class="guide-chevron" aria-hidden="true">▼</span>
+          </div>
+          <div class="guide-body">
+            <div class="guide-content">
+              <p class="guide-intro">VPN lets you securely connect to the credit union's systems from home. Here's how to fix the most common connection issues.</p>
+              <ol class="steps-list">
+                <li>
+                  <span class="step-num">1</span>
+                  <span class="step-text">Make sure your <strong>home internet is working</strong> first — open a browser and try a website. No internet at home = VPN can't connect.</span>
+                </li>
+                <li>
+                  <span class="step-num">2</span>
+                  <span class="step-text">Open the VPN application (usually in your taskbar). Click <strong>Connect</strong>. If it asks for a server address, confirm it with IT that you have the right one.</span>
+                </li>
+                <li>
+                  <span class="step-num">3</span>
+                  <span class="step-text">If you get an error about <strong>credentials</strong>, your work password may have changed. Use your latest Microsoft 365 password.</span>
+                </li>
+                <li>
+                  <span class="step-num">4</span>
+                  <span class="step-text"><strong>Restart the VPN application:</strong> Right-click the taskbar icon → Quit, then reopen it.</span>
+                </li>
+                <li>
+                  <span class="step-num">5</span>
+                  <span class="step-text">Try restarting your computer entirely. VPN can sometimes get stuck after sleep mode.</span>
+                </li>
+                <li>
+                  <span class="step-num">6</span>
+                  <span class="step-text">If you're using Wi-Fi at home, try switching to a <strong>wired ethernet connection</strong> if possible — it's more stable for VPN.</span>
+                </li>
+              </ol>
+              <div class="call-box">
+                <span class="box-icon">📞</span>
+                <span>Still no luck? Give IT a call. We can check from our end whether your VPN account is active and guide you through it step by step.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="guide-card" data-id="net-wifi">
+          <div class="guide-header">
+            <div class="guide-title-area">
+              <div class="guide-title">📶 Wi-Fi keeps dropping or won't connect</div>
+              <div class="guide-tags">
+                <span class="guide-tag tag-easy">Easy Fix</span>
+              </div>
+            </div>
+            <span class="guide-chevron" aria-hidden="true">▼</span>
+          </div>
+          <div class="guide-body">
+            <div class="guide-content">
+              <p class="guide-intro">If you're in the office, Wi-Fi is secondary to a wired connection. For meeting rooms or laptops, try these steps.</p>
+              <ol class="steps-list">
+                <li>
+                  <span class="step-num">1</span>
+                  <span class="step-text">Click the Wi-Fi icon in the taskbar. Make sure you're connected to <strong>the office Wi-Fi network</strong>, not a guest or neighbour's network.</span>
+                </li>
+                <li>
+                  <span class="step-num">2</span>
+                  <span class="step-text">Click <strong>Disconnect</strong> and then <strong>Connect</strong> again. Sometimes a fresh handshake does the trick.</span>
+                </li>
+                <li>
+                  <span class="step-num">3</span>
+                  <span class="step-text">Turn your laptop's Wi-Fi off and back on: click the network icon → toggle Wi-Fi off, wait 5 seconds, toggle back on.</span>
+                </li>
+                <li>
+                  <span class="step-num">4</span>
+                  <span class="step-text">Forget the network and reconnect: Wi-Fi icon → right-click the network → <strong>"Forget"</strong>, then reconnect and re-enter the password if prompted.</span>
+                </li>
+                <li>
+                  <span class="step-num">5</span>
+                  <span class="step-text">Move closer to the wireless access point (the white box on the ceiling or wall). Walls and distance weaken the signal significantly.</span>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ────────────────────────────────────────────
+         CATEGORY 3 – Email & Calendar
+         ──────────────────────────────────────────── -->
+    <section class="category-section" id="cat-email" aria-labelledby="h-email">
+      <div class="category-header">
+        <div class="category-icon icon-bg-purple" aria-hidden="true">📧</div>
+        <div>
+          <h2 id="h-email">Email &amp; Calendar</h2>
+          <p class="category-desc">Outlook, Microsoft 365, calendars, and shared mailboxes.</p>
+        </div>
+      </div>
+
+      <div class="guides-grid">
+
+        <div class="guide-card" data-id="email-outlook">
+          <div class="guide-header">
+            <div class="guide-title-area">
+              <div class="guide-title">📭 Outlook won't open or is frozen</div>
+              <div class="guide-tags">
+                <span class="guide-tag tag-common">Common</span>
+                <span class="guide-tag tag-easy">Easy Fix</span>
+              </div>
+            </div>
+            <span class="guide-chevron" aria-hidden="true">▼</span>
+          </div>
+          <div class="guide-body">
+            <div class="guide-content">
+              <p class="guide-intro">Outlook can get grumpy sometimes. Here's how to coax it back to life.</p>
+              <ol class="steps-list">
+                <li>
+                  <span class="step-num">1</span>
+                  <span class="step-text">Hold <code>Ctrl</code> + <code>Alt</code> + <code>Delete</code> → click <strong>"Task Manager"</strong>. Find <strong>Microsoft Outlook</strong> in the list, click it, then click <strong>"End Task"</strong>.</span>
+                </li>
+                <li>
+                  <span class="step-num">2</span>
+                  <span class="step-text">Wait 10 seconds, then reopen Outlook from your desktop or Start menu.</span>
+                </li>
+                <li>
+                  <span class="step-num">3</span>
+                  <span class="step-text">If it's stuck on a <strong>"Loading Profile…"</strong> screen, close it via Task Manager and hold <code>Ctrl</code> while clicking the Outlook icon. Choose <strong>"Safe Mode"</strong> to open without add-ins.</span>
+                </li>
+                <li>
+                  <span class="step-num">4</span>
+                  <span class="step-text">If Safe Mode works fine, an add-in is the culprit. Go to <strong>File → Options → Add-ins</strong> and disable them one by one.</span>
+                </li>
+                <li>
+                  <span class="step-num">5</span>
+                  <span class="step-text">Try <strong>restarting your computer</strong> — this is the classic fix that works more often than not!</span>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <div class="guide-card" data-id="email-send-receive">
+          <div class="guide-header">
+            <div class="guide-title-area">
+              <div class="guide-title">📬 Can't send or receive emails</div>
+              <div class="guide-tags">
+                <span class="guide-tag tag-common">Common</span>
+                <span class="guide-tag tag-moderate">Moderate</span>
+              </div>
+            </div>
+            <span class="guide-chevron" aria-hidden="true">▼</span>
+          </div>
+          <div class="guide-body">
+            <div class="guide-content">
+              <p class="guide-intro">Before you panic, let's check a few things first.</p>
+              <ol class="steps-list">
+                <li>
+                  <span class="step-num">1</span>
+                  <span class="step-text">Check the <strong>bottom status bar</strong> in Outlook. Does it say "Disconnected" or "Working Offline"? If so, go to <strong>Send/Receive tab → Work Offline</strong> to toggle it off.</span>
+                </li>
+                <li>
+                  <span class="step-num">2</span>
+                  <span class="step-text">Make sure you have <strong>internet access</strong>. Try opening a website in your browser.</span>
+                </li>
+                <li>
+                  <span class="step-num">3</span>
+                  <span class="step-text">Click <strong>Send/Receive → Send All</strong> (the envelope with a blue arrow). Check your <strong>Outbox</strong> folder — stuck messages will be there.</span>
+                </li>
+                <li>
+                  <span class="step-num">4</span>
+                  <span class="step-text">Log in to <code>outlook.office.com</code> in your browser. If email works there, the problem is with the Outlook app, not your account.</span>
+                </li>
+                <li>
+                  <span class="step-num">5</span>
+                  <span class="step-text">Restart Outlook completely (Task Manager → End Task → reopen).</span>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <div class="guide-card" data-id="email-full">
+          <div class="guide-header">
+            <div class="guide-title-area">
+              <div class="guide-title">📦 Mailbox is full / emails are bouncing</div>
+              <div class="guide-tags">
+                <span class="guide-tag tag-easy">Easy Fix</span>
+              </div>
+            </div>
+            <span class="guide-chevron" aria-hidden="true">▼</span>
+          </div>
+          <div class="guide-body">
+            <div class="guide-content">
+              <p class="guide-intro">When your mailbox fills up, new emails start bouncing back to senders. Let's clear some space!</p>
+              <ol class="steps-list">
+                <li>
+                  <span class="step-num">1</span>
+                  <span class="step-text">Empty your <strong>Deleted Items</strong> folder: right-click it → <strong>"Empty Folder"</strong>.</span>
+                </li>
+                <li>
+                  <span class="step-num">2</span>
+                  <span class="step-text">Empty your <strong>Junk Email</strong> folder: right-click it → <strong>"Empty Folder"</strong>.</span>
+                </li>
+                <li>
+                  <span class="step-num">3</span>
+                  <span class="step-text">In your Inbox, sort by <strong>size</strong> (View → Arrange by → Size) and delete any large emails or attachments you no longer need.</span>
+                </li>
+                <li>
+                  <span class="step-num">4</span>
+                  <span class="step-text">Save important <strong>attachments to OneDrive</strong> or a file share, then delete them from the email to free up space.</span>
+                </li>
+              </ol>
+              <div class="tip-box">
+                <span class="box-icon">💡</span>
+                <span>Our mailboxes have a 50 GB limit. If you're regularly hitting it, talk to IT about archiving options or cleaning up shared mailboxes.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="guide-card" data-id="email-calendar">
+          <div class="guide-header">
+            <div class="guide-title-area">
+              <div class="guide-title">📅 Calendar won't sync or meetings are missing</div>
+              <div class="guide-tags">
+                <span class="guide-tag tag-easy">Easy Fix</span>
+              </div>
+            </div>
+            <span class="guide-chevron" aria-hidden="true">▼</span>
+          </div>
+          <div class="guide-body">
+            <div class="guide-content">
+              <p class="guide-intro">Missing meetings can cause real headaches. Here's how to get your calendar back in sync.</p>
+              <ol class="steps-list">
+                <li>
+                  <span class="step-num">1</span>
+                  <span class="step-text">In Outlook, go to <strong>Send/Receive → Send All</strong> to force a sync.</span>
+                </li>
+                <li>
+                  <span class="step-num">2</span>
+                  <span class="step-text">Close Outlook and reopen it. Calendar data often refreshes on startup.</span>
+                </li>
+                <li>
+                  <span class="step-num">3</span>
+                  <span class="step-text">Check <code>outlook.office.com</code> in a browser — if the meeting is there, the app sync is the issue and a restart should fix it.</span>
+                </li>
+                <li>
+                  <span class="step-num">4</span>
+                  <span class="step-text">If meetings sent by others are missing, ask the organizer to resend the invite.</span>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <div class="guide-card" data-id="email-spam">
+          <div class="guide-header">
+            <div class="guide-title-area">
+              <div class="guide-title">🚫 Legitimate email going to Junk / Spam</div>
+              <div class="guide-tags">
+                <span class="guide-tag tag-easy">Easy Fix</span>
+              </div>
+            </div>
+            <span class="guide-chevron" aria-hidden="true">▼</span>
+          </div>
+          <div class="guide-body">
+            <div class="guide-content">
+              <p class="guide-intro">Sometimes the spam filter is a bit over-eager. Here's how to tell it to stand down.</p>
+              <ol class="steps-list">
+                <li>
+                  <span class="step-num">1</span>
+                  <span class="step-text">Find the email in your <strong>Junk Email</strong> folder.</span>
+                </li>
+                <li>
+                  <span class="step-num">2</span>
+                  <span class="step-text">Right-click it → <strong>Junk → Not Junk</strong>. Outlook will move it to your inbox and remember this sender.</span>
+                </li>
+                <li>
+                  <span class="step-num">3</span>
+                  <span class="step-text">To be safe, add the sender to your Safe Senders list: <strong>Home tab → Junk → Junk E-mail Options → Safe Senders → Add</strong>.</span>
+                </li>
+              </ol>
+              <div class="warn-box">
+                <span class="box-icon">⚠️</span>
+                <span>Be careful! Sometimes real phishing emails end up in your inbox. When in doubt whether an email is legitimate, <strong>do not click links</strong> — forward it to IT for review.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ────────────────────────────────────────────
+         CATEGORY 4 – Printers & Scanners
+         ──────────────────────────────────────────── -->
+    <section class="category-section" id="cat-printers" aria-labelledby="h-printers">
+      <div class="category-header">
+        <div class="category-icon icon-bg-orange" aria-hidden="true">🖨️</div>
+        <div>
+          <h2 id="h-printers">Printers &amp; Scanners</h2>
+          <p class="category-desc">The classics — paper jams, missing printers, and scanner woes.</p>
+        </div>
+      </div>
+
+      <div class="guides-grid">
+
+        <div class="guide-card" data-id="print-noprint">
+          <div class="guide-header">
+            <div class="guide-title-area">
+              <div class="guide-title">🖨️ Printer isn't printing anything</div>
+              <div class="guide-tags">
+                <span class="guide-tag tag-common">Most Common</span>
+                <span class="guide-tag tag-easy">Easy Fix</span>
+              </div>
+            </div>
+            <span class="guide-chevron" aria-hidden="true">▼</span>
+          </div>
+          <div class="guide-body">
+            <div class="guide-content">
+              <p class="guide-intro">Nine times out of ten, it's one of these simple things. Walk through them in order.</p>
+              <ol class="steps-list">
+                <li>
+                  <span class="step-num">1</span>
+                  <span class="step-text">Look at the printer itself — is it <strong>powered on</strong>? Is the power light steady (not blinking red)?</span>
+                </li>
+                <li>
+                  <span class="step-num">2</span>
+                  <span class="step-text">Check the <strong>paper tray</strong> — is there paper loaded? Is it jammed? (See the paper jam guide below.)</span>
+                </li>
+                <li>
+                  <span class="step-num">3</span>
+                  <span class="step-text">On your computer, go to <strong>Start → Settings → Bluetooth &amp; devices → Printers &amp; scanners</strong>. Find your printer and click <strong>"Open print queue"</strong>. Delete any stuck jobs (right-click → Cancel).</span>
+                </li>
+                <li>
+                  <span class="step-num">4</span>
+                  <span class="step-text">Right-click the printer in the Printers list → <strong>"Set as default printer"</strong> if it isn't already.</span>
+                </li>
+                <li>
+                  <span class="step-num">5</span>
+                  <span class="step-text"><strong>Restart the Print Spooler service:</strong> Press <code>Windows</code> key, type <strong>Services</strong>, open it, scroll to <strong>Print Spooler</strong>, right-click → <strong>Restart</strong>.</span>
+                </li>
+                <li>
+                  <span class="step-num">6</span>
+                  <span class="step-text">Try printing a test page: right-click the printer → <strong>"Printer properties" → "Print Test Page"</strong>.</span>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <div class="guide-card" data-id="print-jam">
+          <div class="guide-header">
+            <div class="guide-title-area">
+              <div class="guide-title">📄 Paper jam</div>
+              <div class="guide-tags">
+                <span class="guide-tag tag-easy">Easy Fix</span>
+              </div>
+            </div>
+            <span class="guide-chevron" aria-hidden="true">▼</span>
+          </div>
+          <div class="guide-body">
+            <div class="guide-content">
+              <p class="guide-intro">Paper jams are annoying but rarely serious. Take your time — rushing can tear the paper and make it worse.</p>
+              <ol class="steps-list">
+                <li>
+                  <span class="step-num">1</span>
+                  <span class="step-text"><strong>Turn off the printer</strong> first. This releases the rollers and makes it easier to remove the paper safely.</span>
+                </li>
+                <li>
+                  <span class="step-num">2</span>
+                  <span class="step-text">Gently open all access panels (front, back, and the paper tray). Look inside with a flashlight if needed.</span>
+                </li>
+                <li>
+                  <span class="step-num">3</span>
+                  <span class="step-text">Carefully <strong>pull the jammed paper in the direction it feeds</strong> (usually forward, in the direction the paper would have come out). Pull slowly and evenly — don't yank!</span>
+                </li>
+                <li>
+                  <span class="step-num">4</span>
+                  <span class="step-text">Remove all pieces — even tiny bits. A scrap left inside will cause more jams.</span>
+                </li>
+                <li>
+                  <span class="step-num">5</span>
+                  <span class="step-text">Close all panels, power the printer back on, and try printing again.</span>
+                </li>
+              </ol>
+              <div class="call-box">
+                <span class="box-icon">📞</span>
+                <span>If you can't locate or safely remove the paper, or the printer shows a jam error with no visible paper, <strong>stop and call IT</strong>. Forcing it could damage the rollers.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="guide-card" data-id="print-notfound">
+          <div class="guide-header">
+            <div class="guide-title-area">
+              <div class="guide-title">🔍 Can't find the printer in the list</div>
+              <div class="guide-tags">
+                <span class="guide-tag tag-moderate">Moderate</span>
+              </div>
+            </div>
+            <span class="guide-chevron" aria-hidden="true">▼</span>
+          </div>
+          <div class="guide-body">
+            <div class="guide-content">
+              <p class="guide-intro">This often happens after a computer update or when using a different machine.</p>
+              <ol class="steps-list">
+                <li>
+                  <span class="step-num">1</span>
+                  <span class="step-text">Go to <strong>Start → Settings → Bluetooth &amp; devices → Printers &amp; scanners → Add a printer or scanner</strong>. Wait for Windows to scan the network.</span>
+                </li>
+                <li>
+                  <span class="step-num">2</span>
+                  <span class="step-text">If the printer doesn't appear, click <strong>"The printer that I want isn't listed"</strong> and choose <strong>"Find a printer by name"</strong>. Enter the printer name (ask a colleague or check the label on the printer).</span>
+                </li>
+                <li>
+                  <span class="step-num">3</span>
+                  <span class="step-text">Make sure you're connected to the <strong>office network</strong> (not guest Wi-Fi) — printers are only accessible on the internal network.</span>
+                </li>
+              </ol>
+              <div class="call-box">
+                <span class="box-icon">📞</span>
+                <span>If you can't add the printer after these steps, IT will need to push the printer to your computer remotely. Give us a call!</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="guide-card" data-id="print-scanner">
+          <div class="guide-header">
+            <div class="guide-title-area">
+              <div class="guide-title">📠 Scanner not scanning / not recognized</div>
+              <div class="guide-tags">
+                <span class="guide-tag tag-moderate">Moderate</span>
+              </div>
+            </div>
+            <span class="guide-chevron" aria-hidden="true">▼</span>
+          </div>
+          <div class="guide-body">
+            <div class="guide-content">
+              <p class="guide-intro">Most of our scanners are part of the multifunction printers. Here's how to get them scanning again.</p>
+              <ol class="steps-list">
+                <li>
+                  <span class="step-num">1</span>
+                  <span class="step-text">Ensure the <strong>document is properly placed</strong> on the glass or in the document feeder. Make sure nothing is sticking out.</span>
+                </li>
+                <li>
+                  <span class="step-num">2</span>
+                  <span class="step-text">Open <strong>Windows Fax and Scan</strong> (search in Start menu) and try scanning from there.</span>
+                </li>
+                <li>
+                  <span class="step-num">3</span>
+                  <span class="step-text">Power-cycle the printer/scanner: turn it off, wait 30 seconds, turn it back on.</span>
+                </li>
+                <li>
+                  <span class="step-num">4</span>
+                  <span class="step-text">If using the scan-to-email feature, make sure the email address on file is your current work email. Check with IT if you've recently changed accounts.</span>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ────────────────────────────────────────────
+         CATEGORY 5 – Computer Performance
+         ──────────────────────────────────────────── -->
+    <section class="category-section" id="cat-computer" aria-labelledby="h-computer">
+      <div class="category-header">
+        <div class="category-icon icon-bg-indigo" aria-hidden="true">💻</div>
+        <div>
+          <h2 id="h-computer">Computer Performance</h2>
+          <p class="category-desc">Slow, freezing, crashing, or showing scary error screens.</p>
+        </div>
+      </div>
+
+      <div class="guides-grid">
+
+        <div class="guide-card" data-id="pc-slow">
+          <div class="guide-header">
+            <div class="guide-title-area">
+              <div class="guide-title">🐢 My computer is running very slow</div>
+              <div class="guide-tags">
+                <span class="guide-tag tag-common">Most Common</span>
+                <span class="guide-tag tag-easy">Easy Fix</span>
+              </div>
+            </div>
+            <span class="guide-chevron" aria-hidden="true">▼</span>
+          </div>
+          <div class="guide-body">
+            <div class="guide-content">
+              <p class="guide-intro">Slow computers are the number-one complaint we hear. The good news is there are some quick fixes to try!</p>
+              <ol class="steps-list">
+                <li>
+                  <span class="step-num">1</span>
+                  <span class="step-text"><strong>Restart your computer.</strong> This is the single most effective fix. A full restart (not sleep) clears memory, applies updates, and gives Windows a fresh start. Do this at least once a week.</span>
+                </li>
+                <li>
+                  <span class="step-num">2</span>
+                  <span class="step-text">Open <strong>Task Manager</strong> (<code>Ctrl</code> + <code>Shift</code> + <code>Esc</code>). Click <strong>"CPU"</strong> and <strong>"Memory"</strong> columns to sort. Look for anything using more than 80% — that might be the culprit.</span>
+                </li>
+                <li>
+                  <span class="step-num">3</span>
+                  <span class="step-text">Close applications and browser tabs you're not using. Each open Chrome tab uses memory!</span>
+                </li>
+                <li>
+                  <span class="step-num">4</span>
+                  <span class="step-text">Check your hard drive space: <strong>File Explorer → This PC</strong>. If the C: drive bar is red and nearly full, that will seriously slow things down. Try emptying the Recycle Bin and Downloads folder.</span>
+                </li>
+                <li>
+                  <span class="step-num">5</span>
+                  <span class="step-text">Run <strong>Disk Cleanup:</strong> Search in Start menu for "Disk Cleanup", select drive C:, check all boxes, click OK.</span>
+                </li>
+              </ol>
+              <div class="tip-box">
+                <span class="box-icon">💡</span>
+                <span>Your computer should restart at least once a week. Leaving it in sleep mode for weeks on end causes slowdowns. Make it a Friday habit!</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="guide-card" data-id="pc-freeze">
+          <div class="guide-header">
+            <div class="guide-title-area">
+              <div class="guide-title">🥶 Computer is frozen / not responding</div>
+              <div class="guide-tags">
+                <span class="guide-tag tag-common">Common</span>
+                <span class="guide-tag tag-easy">Easy Fix</span>
+              </div>
+            </div>
+            <span class="guide-chevron" aria-hidden="true">▼</span>
+          </div>
+          <div class="guide-body">
+            <div class="guide-content">
+              <p class="guide-intro">Don't pull the plug just yet — try these steps first.</p>
+              <ol class="steps-list">
+                <li>
+                  <span class="step-num">1</span>
+                  <span class="step-text"><strong>Wait 2–3 minutes.</strong> Sometimes Windows is busy processing an update or a large file and just needs a moment.</span>
+                </li>
+                <li>
+                  <span class="step-num">2</span>
+                  <span class="step-text">Try pressing <code>Ctrl</code> + <code>Alt</code> + <code>Delete</code>. If the blue screen appears, click <strong>"Task Manager"</strong>, find the frozen app, and click <strong>"End Task"</strong>.</span>
+                </li>
+                <li>
+                  <span class="step-num">3</span>
+                  <span class="step-text">If the mouse cursor is moving but nothing responds, try <code>Windows</code> key + <code>D</code> to minimize everything to the desktop, then try again.</span>
+                </li>
+                <li>
+                  <span class="step-num">4</span>
+                  <span class="step-text">As a last resort: hold the <strong>power button</strong> for 5 seconds until the computer turns off. Wait 15 seconds, then press it once to turn it back on.</span>
+                </li>
+              </ol>
+              <div class="warn-box">
+                <span class="box-icon">⚠️</span>
+                <span>Force-shutting down using the power button is okay occasionally, but shouldn't be a regular habit. If it's happening often, let IT know so we can investigate the root cause.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="guide-card" data-id="pc-bsod">
+          <div class="guide-header">
+            <div class="guide-title-area">
+              <div class="guide-title">💀 Blue Screen of Death (BSOD)</div>
+              <div class="guide-tags">
+                <span class="guide-tag tag-call-it">May Need IT</span>
+              </div>
+            </div>
+            <span class="guide-chevron" aria-hidden="true">▼</span>
+          </div>
+          <div class="guide-body">
+            <div class="guide-content">
+              <p class="guide-intro">The dreaded blue screen. It's alarming but usually not the end of the world. Here's what to do.</p>
+              <ol class="steps-list">
+                <li>
+                  <span class="step-num">1</span>
+                  <span class="step-text"><strong>Note the error message</strong> on the blue screen — write it down or take a photo with your phone. It will say something like <em>"CRITICAL_PROCESS_DIED"</em> or <em>"MEMORY_MANAGEMENT"</em>. This helps IT diagnose the issue.</span>
+                </li>
+                <li>
+                  <span class="step-num">2</span>
+                  <span class="step-text">Windows will usually restart on its own after a minute. Let it restart normally.</span>
+                </li>
+                <li>
+                  <span class="step-num">3</span>
+                  <span class="step-text">After restart, check if Windows wants to run any <strong>repairs</strong> — let it do so. Don't skip or cancel the repair process.</span>
+                </li>
+                <li>
+                  <span class="step-num">4</span>
+                  <span class="step-text">If it boots back to Windows normally, check for <strong>Windows Updates</strong> (Start → Settings → Windows Update) — pending updates or recent driver updates can cause BSODs.</span>
+                </li>
+              </ol>
+              <div class="call-box">
+                <span class="box-icon">📞</span>
+                <span>If you're getting BSODs repeatedly (more than once a week), <strong>call IT</strong> with the error code you noted. This often indicates a hardware or driver issue that needs our attention.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="guide-card" data-id="pc-updates">
+          <div class="guide-header">
+            <div class="guide-title-area">
+              <div class="guide-title">🔄 Windows Update is taking forever / stuck</div>
+              <div class="guide-tags">
+                <span class="guide-tag tag-easy">Easy Fix</span>
+              </div>
+            </div>
+            <span class="guide-chevron" aria-hidden="true">▼</span>
+          </div>
+          <div class="guide-body">
+            <div class="guide-content">
+              <p class="guide-intro">Updates are important — they keep your computer secure. Here's how to handle them without losing your mind.</p>
+              <ol class="steps-list">
+                <li>
+                  <span class="step-num">1</span>
+                  <span class="step-text">If an update is in progress, <strong>let it finish</strong>. Do not force-shutdown during an update — this can corrupt Windows. Even if it seems stuck, give it at least 30–45 minutes.</span>
+                </li>
+                <li>
+                  <span class="step-num">2</span>
+                  <span class="step-text">If the update screen has been sitting at the same percentage for over an hour with no disk activity (listen for the hard drive), it may be truly stuck. Try a <strong>gentle restart</strong> (<code>Ctrl</code> + <code>Alt</code> + <code>Delete</code> → Power icon → Restart).</span>
+                </li>
+                <li>
+                  <span class="step-num">3</span>
+                  <span class="step-text">To schedule updates for after hours: <strong>Settings → Windows Update → Schedule the restart</strong> — pick a time when you won't be at your desk.</span>
+                </li>
+              </ol>
+              <div class="tip-box">
+                <span class="box-icon">💡</span>
+                <span>Leave your computer on overnight on Tuesdays — Microsoft releases updates on "Patch Tuesday" and they'll install quietly while you're home.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="guide-card" data-id="pc-virus">
+          <div class="guide-header">
+            <div class="guide-title-area">
+              <div class="guide-title">🦠 I think I have a virus or malware</div>
+              <div class="guide-tags">
+                <span class="guide-tag tag-call-it">Call IT Immediately</span>
+              </div>
+            </div>
+            <span class="guide-chevron" aria-hidden="true">▼</span>
+          </div>
+          <div class="guide-body">
+            <div class="guide-content">
+              <p class="guide-intro">Signs of infection: strange pop-ups, slow computer, unusual emails sent from your account, files you didn't create, or requests for payment.</p>
+              <ol class="steps-list">
+                <li>
+                  <span class="step-num">1</span>
+                  <span class="step-text"><strong>STOP using the computer immediately.</strong> Do not enter any passwords or access banking systems.</span>
+                </li>
+                <li>
+                  <span class="step-num">2</span>
+                  <span class="step-text"><strong>Do NOT turn it off</strong> — IT may need the computer in its current state to investigate.</span>
+                </li>
+                <li>
+                  <span class="step-num">3</span>
+                  <span class="step-text"><strong>Unplug the network cable</strong> (or disable Wi-Fi) to prevent the infection from spreading.</span>
+                </li>
+                <li>
+                  <span class="step-num">4</span>
+                  <span class="step-text"><strong>Call IT right now</strong> — this is an emergency.</span>
+                </li>
+              </ol>
+              <div class="call-box">
+                <span class="box-icon">🚨</span>
+                <span>Suspected malware at a credit union is a <strong>security emergency</strong>. Call IT immediately — do not attempt to remove it yourself or continue working on the machine.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ────────────────────────────────────────────
+         CATEGORY 6 – Phones & Teams
+         ──────────────────────────────────────────── -->
+    <section class="category-section" id="cat-phones" aria-labelledby="h-phones">
+      <div class="category-header">
+        <div class="category-icon icon-bg-green" aria-hidden="true">📞</div>
+        <div>
+          <h2 id="h-phones">Phones &amp; Microsoft Teams</h2>
+          <p class="category-desc">Teams calls, softphone, and video meetings.</p>
+        </div>
+      </div>
+
+      <div class="guides-grid">
+
+        <div class="guide-card" data-id="ph-teams-audio">
+          <div class="guide-header">
+            <div class="guide-title-area">
+              <div class="guide-title">🎤 No audio in Teams calls (can't hear or be heard)</div>
+              <div class="guide-tags">
+                <span class="guide-tag tag-common">Most Common</span>
+                <span class="guide-tag tag-easy">Easy Fix</span>
+              </div>
+            </div>
+            <span class="guide-chevron" aria-hidden="true">▼</span>
+          </div>
+          <div class="guide-body">
+            <div class="guide-content">
+              <p class="guide-intro">Audio issues in Teams are incredibly common and almost always fixable in under 2 minutes.</p>
+              <ol class="steps-list">
+                <li>
+                  <span class="step-num">1</span>
+                  <span class="step-text">Check that you're <strong>not muted</strong> — look for the microphone icon in the Teams call bar. Red with a line through it = muted. Click it to unmute.</span>
+                </li>
+                <li>
+                  <span class="step-num">2</span>
+                  <span class="step-text">Click the <strong>three dots (…)</strong> in the call bar → <strong>Device settings</strong>. Make sure the correct <strong>microphone and speaker</strong> are selected (e.g., your headset, not the laptop mic).</span>
+                </li>
+                <li>
+                  <span class="step-num">3</span>
+                  <span class="step-text">Unplug your headset or USB audio device and plug it back in. Wait 5 seconds and check Device Settings again.</span>
+                </li>
+                <li>
+                  <span class="step-num">4</span>
+                  <span class="step-text">Check Windows volume: click the speaker icon in the taskbar — make sure it's not muted and the volume is up.</span>
+                </li>
+                <li>
+                  <span class="step-num">5</span>
+                  <span class="step-text">If others can't hear you specifically: In Teams, click your profile picture → Settings → Devices. Run the <strong>audio test</strong>.</span>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <div class="guide-card" data-id="ph-teams-video">
+          <div class="guide-header">
+            <div class="guide-title-area">
+              <div class="guide-title">📷 My camera isn't working in Teams</div>
+              <div class="guide-tags">
+                <span class="guide-tag tag-easy">Easy Fix</span>
+              </div>
+            </div>
+            <span class="guide-chevron" aria-hidden="true">▼</span>
+          </div>
+          <div class="guide-body">
+            <div class="guide-content">
+              <p class="guide-intro">Camera not showing up? No video in meetings? Try these steps.</p>
+              <ol class="steps-list">
+                <li>
+                  <span class="step-num">1</span>
+                  <span class="step-text">Make sure the <strong>camera is physically connected</strong> (for external webcams). Check the USB cable.</span>
+                </li>
+                <li>
+                  <span class="step-num">2</span>
+                  <span class="step-text">In Teams Settings (profile → Settings → Devices), check that your camera is listed and selected under <strong>Camera</strong>.</span>
+                </li>
+                <li>
+                  <span class="step-num">3</span>
+                  <span class="step-text">Check that no other app is using the camera. Close Zoom, Skype, or any other video app that might have grabbed control of it.</span>
+                </li>
+                <li>
+                  <span class="step-num">4</span>
+                  <span class="step-text">Check camera privacy: <strong>Windows Settings → Privacy &amp; security → Camera</strong>. Make sure <strong>"Camera access"</strong> is On, and that <strong>Microsoft Teams</strong> is enabled in the list.</span>
+                </li>
+                <li>
+                  <span class="step-num">5</span>
+                  <span class="step-text">Restart Teams: right-click the Teams icon in the taskbar → Quit, then reopen it.</span>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <div class="guide-card" data-id="ph-teams-calling">
+          <div class="guide-header">
+            <div class="guide-title-area">
+              <div class="guide-title">☎️ Can't make or receive calls in Teams</div>
+              <div class="guide-tags">
+                <span class="guide-tag tag-moderate">Moderate</span>
+              </div>
+            </div>
+            <span class="guide-chevron" aria-hidden="true">▼</span>
+          </div>
+          <div class="guide-body">
+            <div class="guide-content">
+              <p class="guide-intro">Our phone system runs entirely through Microsoft Teams. If you can't make or receive calls, try these steps.</p>
+              <ol class="steps-list">
+                <li>
+                  <span class="step-num">1</span>
+                  <span class="step-text">Make sure Teams is <strong>open and signed in</strong>. Look for the Teams icon in your taskbar — if it's not there, reopen Teams from the Start menu.</span>
+                </li>
+                <li>
+                  <span class="step-num">2</span>
+                  <span class="step-text">Check that you have a <strong>network connection</strong>. Open a browser and try loading a webpage. No internet = no Teams calls.</span>
+                </li>
+                <li>
+                  <span class="step-num">3</span>
+                  <span class="step-text">In Teams, click <strong>Calls</strong> in the left panel. If the dial pad is missing or grayed out, your calling licence may need to be checked — call IT.</span>
+                </li>
+                <li>
+                  <span class="step-num">4</span>
+                  <span class="step-text">Click your profile picture → <strong>Settings → Devices</strong> and confirm the correct <strong>speaker and microphone</strong> are selected.</span>
+                </li>
+                <li>
+                  <span class="step-num">5</span>
+                  <span class="step-text">Restart Teams: right-click the Teams icon in the taskbar → <strong>Quit</strong>, then reopen it. Most calling glitches clear up after a restart.</span>
+                </li>
+              </ol>
+              <div class="call-box">
+                <span class="box-icon">📞</span>
+                <span>If Teams calling is still not working after a restart, <strong>call IT from your cell phone</strong>. We can check your Teams calling licence and phone number assignment from our end.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="guide-card" data-id="ph-voicemail">
+          <div class="guide-header">
+            <div class="guide-title-area">
+              <div class="guide-title">📬 Can't access voicemail</div>
+              <div class="guide-tags">
+                <span class="guide-tag tag-easy">Easy Fix</span>
+              </div>
+            </div>
+            <span class="guide-chevron" aria-hidden="true">▼</span>
+          </div>
+          <div class="guide-body">
+            <div class="guide-content">
+              <p class="guide-intro">Voicemails are delivered through Microsoft Teams.</p>
+              <ol class="steps-list">
+                <li>
+                  <span class="step-num">1</span>
+                  <span class="step-text">Open <strong>Microsoft Teams</strong> → click <strong>Calls</strong> in the left panel → click <strong>Voicemail</strong> tab on the right side.</span>
+                </li>
+                <li>
+                  <span class="step-num">2</span>
+                  <span class="step-text">Check your <strong>Outlook inbox</strong> — voicemails may also be delivered as audio file attachments in email.</span>
+                </li>
+                <li>
+                  <span class="step-num">3</span>
+                  <span class="step-text">If voicemail is not set up or you haven't configured a greeting, go to Teams → <strong>Calls → Voicemail → Change greetings</strong> to set it up. Contact IT if the option is missing.</span>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ────────────────────────────────────────────
+         CATEGORY 7 – Core Banking Systems
+         ──────────────────────────────────────────── -->
+    <section class="category-section" id="cat-banking" aria-labelledby="h-banking">
+      <div class="category-header">
+        <div class="category-icon icon-bg-red" aria-hidden="true">🏦</div>
+        <div>
+          <h2 id="h-banking">Core Banking Systems</h2>
+          <p class="category-desc">Teller system, member portal, reporting apps, and shared drives.</p>
+        </div>
+      </div>
+
+      <div class="guides-grid">
+
+        <div class="guide-card" data-id="bank-login">
+          <div class="guide-header">
+            <div class="guide-title-area">
+              <div class="guide-title">🏦 Can't log in to the core banking system</div>
+              <div class="guide-tags">
+                <span class="guide-tag tag-common">Common</span>
+                <span class="guide-tag tag-moderate">Moderate</span>
+              </div>
+            </div>
+            <span class="guide-chevron" aria-hidden="true">▼</span>
+          </div>
+          <div class="guide-body">
+            <div class="guide-content">
+              <p class="guide-intro">Can't get into the banking system? Here's a methodical approach before calling IT.</p>
+              <ol class="steps-list">
+                <li>
+                  <span class="step-num">1</span>
+                  <span class="step-text">Double-check the <strong>System Status board</strong> at the top of this page — if it shows a known outage, all we can do is wait. We're already working on it.</span>
+                </li>
+                <li>
+                  <span class="step-num">2</span>
+                  <span class="step-text">Verify your <strong>username and password</strong> carefully — the banking system uses a separate login from your Windows/Microsoft account.</span>
+                </li>
+                <li>
+                  <span class="step-num">3</span>
+                  <span class="step-text">Make sure you're connected to the <strong>credit union network</strong> or connected via VPN (if working remotely).</span>
+                </li>
+                <li>
+                  <span class="step-num">4</span>
+                  <span class="step-text">Try <strong>closing and reopening</strong> the banking application. For web-based systems, clear your browser cache (<code>Ctrl</code> + <code>Shift</code> + <code>Delete</code>) and reload.</span>
+                </li>
+                <li>
+                  <span class="step-num">5</span>
+                  <span class="step-text">If you get a <strong>session timeout</strong> message, simply log back in — this is normal after periods of inactivity.</span>
+                </li>
+              </ol>
+              <div class="call-box">
+                <span class="box-icon">📞</span>
+                <span>If none of these steps work, or if your banking system account appears to be locked, <strong>call IT right away</strong>. We never want teller stations down for long!</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="guide-card" data-id="bank-slow">
+          <div class="guide-header">
+            <div class="guide-title-area">
+              <div class="guide-title">⏳ Banking system is running very slowly</div>
+              <div class="guide-tags">
+                <span class="guide-tag tag-moderate">Moderate</span>
+              </div>
+            </div>
+            <span class="guide-chevron" aria-hidden="true">▼</span>
+          </div>
+          <div class="guide-body">
+            <div class="guide-content">
+              <p class="guide-intro">Slow banking software can really impact member service. Here's what to check.</p>
+              <ol class="steps-list">
+                <li>
+                  <span class="step-num">1</span>
+                  <span class="step-text">Check if <strong>other staff</strong> are also experiencing slowness — if it's widespread, it's likely a server-side issue and IT needs to know.</span>
+                </li>
+                <li>
+                  <span class="step-num">2</span>
+                  <span class="step-text">Close any <strong>extra programs or browser tabs</strong> on your computer that you aren't using — free up as much memory as possible.</span>
+                </li>
+                <li>
+                  <span class="step-num">3</span>
+                  <span class="step-text"><strong>Log out and back in</strong> to the banking system — this can refresh your session and fix cache issues.</span>
+                </li>
+                <li>
+                  <span class="step-num">4</span>
+                  <span class="step-text">If using a web browser for the banking system, try a <strong>different browser</strong> (e.g., Edge instead of Chrome).</span>
+                </li>
+              </ol>
+              <div class="call-box">
+                <span class="box-icon">📞</span>
+                <span>If performance doesn't improve and it's affecting your ability to serve members, <strong>call IT</strong>. We can check server performance and network health.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="guide-card" data-id="bank-fileshare">
+          <div class="guide-header">
+            <div class="guide-title-area">
+              <div class="guide-title">📁 Can't access shared drives / network folders</div>
+              <div class="guide-tags">
+                <span class="guide-tag tag-moderate">Moderate</span>
+              </div>
+            </div>
+            <span class="guide-chevron" aria-hidden="true">▼</span>
+          </div>
+          <div class="guide-body">
+            <div class="guide-content">
+              <p class="guide-intro">Network drives (like the G: or S: drives) are hosted on our servers. Here's how to reconnect.</p>
+              <ol class="steps-list">
+                <li>
+                  <span class="step-num">1</span>
+                  <span class="step-text">Make sure you're <strong>connected to the network or VPN</strong>. Network drives only work on the internal network.</span>
+                </li>
+                <li>
+                  <span class="step-num">2</span>
+                  <span class="step-text">Open <strong>File Explorer</strong>. If the drive shows a red X, try double-clicking it — Windows may reconnect automatically.</span>
+                </li>
+                <li>
+                  <span class="step-num">3</span>
+                  <span class="step-text"><strong>Sign out and sign back in</strong> to Windows — drive mappings re-apply at login.</span>
+                </li>
+                <li>
+                  <span class="step-num">4</span>
+                  <span class="step-text">If the drive letter is completely missing, IT may need to remap it for you. Call us and we can push it remotely in a few minutes.</span>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <div class="guide-card" data-id="bank-report">
+          <div class="guide-header">
+            <div class="guide-title-area">
+              <div class="guide-title">📊 Reports aren't generating / printing correctly</div>
+              <div class="guide-tags">
+                <span class="guide-tag tag-call-it">May Need IT</span>
+              </div>
+            </div>
+            <span class="guide-chevron" aria-hidden="true">▼</span>
+          </div>
+          <div class="guide-body">
+            <div class="guide-content">
+              <p class="guide-intro">Report issues can have many causes. Here are the quick checks before calling us.</p>
+              <ol class="steps-list">
+                <li>
+                  <span class="step-num">1</span>
+                  <span class="step-text">Make sure you're selecting the <strong>correct date range and filters</strong> for the report — double-check the parameters.</span>
+                </li>
+                <li>
+                  <span class="step-num">2</span>
+                  <span class="step-text">If the report opens in a separate window that disappears instantly, check if your <strong>pop-up blocker</strong> is preventing it (look for a notification in your browser's address bar).</span>
+                </li>
+                <li>
+                  <span class="step-num">3</span>
+                  <span class="step-text">If reports are printing incorrectly (wrong paper size, cut off), check your <strong>printer settings</strong> and make sure the correct printer is selected.</span>
+                </li>
+                <li>
+                  <span class="step-num">4</span>
+                  <span class="step-text">Try <strong>exporting to PDF or Excel</strong> as a workaround if printing isn't working.</span>
+                </li>
+              </ol>
+              <div class="call-box">
+                <span class="box-icon">📞</span>
+                <span>If a specific report is consistently failing or showing incorrect data, please call IT and describe the report name and what you expected to see.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════
+         WHEN TO CALL IT – Red Stop Section
+         ════════════════════════════════════════════════ -->
+    <section id="call-it-section" aria-labelledby="h-callit">
+      <div class="call-it-top">
+        <span class="call-it-emoji" aria-hidden="true">🚨</span>
+        <div>
+          <h2 id="h-callit">Stop Troubleshooting — Call IT Right Now</h2>
+          <p>
+            Some situations go beyond self-help. If any of the following apply to you,
+            <strong>put down the mouse</strong> and give us a call straight away.
+            At the credit union, protecting member data is our top priority.
+          </p>
+        </div>
+      </div>
+
+      <div class="call-it-grid">
+        <div class="call-it-item">
+          <span class="ci-icon" aria-hidden="true">🦠</span>
+          <span>You see <strong>pop-ups demanding payment</strong>, or your files appear to be encrypted with a ransom note.</span>
+        </div>
+        <div class="call-it-item">
+          <span class="ci-icon" aria-hidden="true">🔓</span>
+          <span>You suspect <strong>your account has been hacked</strong> or someone else is accessing your computer remotely.</span>
+        </div>
+        <div class="call-it-item">
+          <span class="ci-icon" aria-hidden="true">📧</span>
+          <span>You <strong>clicked a link or opened an attachment</strong> in a suspicious email and now something feels wrong.</span>
+        </div>
+        <div class="call-it-item">
+          <span class="ci-icon" aria-hidden="true">🏦</span>
+          <span>The <strong>core banking system is completely down</strong> and members are waiting at the counter.</span>
+        </div>
+        <div class="call-it-item">
+          <span class="ci-icon" aria-hidden="true">💾</span>
+          <span>You accidentally <strong>deleted important member or financial data</strong> that cannot be recovered locally.</span>
+        </div>
+        <div class="call-it-item">
+          <span class="ci-icon" aria-hidden="true">🔥</span>
+          <span>Your computer is <strong>making unusual noises, smells like burning</strong>, or is physically damaged.</span>
+        </div>
+        <div class="call-it-item">
+          <span class="ci-icon" aria-hidden="true">🔒</span>
+          <span>Your <strong>account is fully locked out</strong> and you cannot access anything — email, Windows, or banking.</span>
+        </div>
+        <div class="call-it-item">
+          <span class="ci-icon" aria-hidden="true">📞</span>
+          <span>Someone calls claiming to be <strong>"IT support"</strong> asking for your password or remote access. <em>Hang up.</em> Call us to verify.</span>
+        </div>
+        <div class="call-it-item">
+          <span class="ci-icon" aria-hidden="true">⚠️</span>
+          <span>You see an <strong>unfamiliar error message</strong> on a banking screen that you've never seen before and don't understand.</span>
+        </div>
+        <div class="call-it-item">
+          <span class="ci-icon" aria-hidden="true">🖥️</span>
+          <span>Your computer <strong>gets a Blue Screen repeatedly</strong> — more than once in a short period.</span>
+        </div>
+        <div class="call-it-item">
+          <span class="ci-icon" aria-hidden="true">👤</span>
+          <span>You notice a <strong>new user account or program installed</strong> on your computer that you didn't create.</span>
+        </div>
+        <div class="call-it-item">
+          <span class="ci-icon" aria-hidden="true">🌐</span>
+          <span>The <strong>entire branch has lost network/internet</strong> access and there's no known outage listed above.</span>
+        </div>
+      </div>
+
+      <div class="call-it-contact" role="region" aria-label="IT Contact Information">
+        <div class="contact-method">
+          <span class="cm-icon" aria-hidden="true">📧</span>
+          <span>
+            <span class="cm-label">Email (non-urgent)</span>
+            <span class="cm-value">tburchell@valleycreditunion.com · pmoore@valleycreditunion.com</span>
+          </span>
+        </div>
+        <div class="contact-method">
+          <span class="cm-icon" aria-hidden="true">💬</span>
+          <span>
+            <span class="cm-label">Teams Chat</span>
+            <span class="cm-value">IT Support</span>
+          </span>
+        </div>
+        <div class="contact-method">
+          <span class="cm-icon" aria-hidden="true">🕐</span>
+          <span>
+            <span class="cm-label">Hours</span>
+            <span class="cm-value">Mon–Fri · 8:30 am – 4:30 pm</span>
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════
+         TIPS & TRICKS
+         ════════════════════════════════════════════════ -->
+    <section id="tips-section" aria-labelledby="h-tips">
+      <div class="section-header">
+        <h2 id="h-tips">💡 Good Habits &amp; Quick Tips</h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="tips-grid">
+        <div class="tip-card">
+          <div class="tip-header">
+            <span class="tip-icon">🔄</span>
+            <h3>Restart Weekly</h3>
+          </div>
+          <p>Restart your computer at least once a week — not just shut down, a full <em>Restart</em>. This applies updates, clears memory, and prevents most performance issues.</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-header">
+            <span class="tip-icon">🔐</span>
+            <h3>Lock When Away</h3>
+          </div>
+          <p>Press <strong>Windows key + L</strong> every time you step away from your desk, even for a minute. It's a credit union requirement and keeps member data safe.</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-header">
+            <span class="tip-icon">📧</span>
+            <h3>Think Before You Click</h3>
+          </div>
+          <p>Hover over any link before clicking to see where it actually goes. If an email feels urgent or asks for credentials, call the sender to verify. When in doubt, call IT.</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-header">
+            <span class="tip-icon">☁️</span>
+            <h3>Save to OneDrive</h3>
+          </div>
+          <p>Save documents to <strong>OneDrive</strong> or the shared network drive, not just your Desktop or Downloads. Files on the local desktop are <em>not</em> backed up automatically.</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-header">
+            <span class="tip-icon">🧹</span>
+            <h3>Clean Up Regularly</h3>
+          </div>
+          <p>Empty your Recycle Bin and clean out your Downloads folder monthly. A cluttered drive slows things down and makes it harder to find what you need.</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-header">
+            <span class="tip-icon">📱</span>
+            <h3>Keep MFA Up to Date</h3>
+          </div>
+          <p>If you get a new phone, tell IT before you lose your old one so we can help you transfer your MFA setup. Don't wait until you're locked out!</p>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /#main-categories -->
+</main>
+
+<!-- Back to top -->
+<button id="back-to-top" aria-label="Back to top" title="Back to top">▲</button>
+
+<!-- ══════════════════ FOOTER ══════════════════ -->
+<footer id="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-logo" aria-hidden="true">⚓</div>
+    <p><strong>IT Self-Help Portal</strong> &nbsp;·&nbsp; Valley Credit Union</p>
+    <p class="footer-tagline">"We're always here to help but if you are a self starter, try these first!"</p>
+    <p>If you've tried everything and still need help, we're always happy to lend a hand.<br />
+       Teams message the <strong>IT Support</strong> channel.</p>
+    <div class="footer-links">
+      <a href="passwords.html">Passwords</a>
+      <a href="network.html">Network</a>
+      <a href="email.html">Email</a>
+      <a href="printers.html">Printers</a>
+      <a href="computer.html">Computer</a>
+      <a href="phones.html">Phones</a>
+      <a href="banking.html">Banking</a>
+      <a href="mambu.html">Mambu</a>
+      <a href="software.html">Software</a>
+      <a href="#call-it-section">Call IT</a>
+    </div>
+    <p style="margin-top: 16px; opacity: 0.5; font-size: 0.78rem;">
+      &copy; 2026 Valley Credit Union &nbsp;·&nbsp; For internal staff use only
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
