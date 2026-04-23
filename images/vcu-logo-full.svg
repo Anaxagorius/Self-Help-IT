@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 160" role="img" aria-label="Valley Credit Union logo">
+  <!-- Icon: navy rounded square -->
+  <rect x="0" y="0" width="160" height="160" rx="30" fill="#1D2772"/>
+
+  <!-- Gold C shape -->
+  <!-- Center (67,80), outer R=40, inner R=26, gap angle ±55° -->
+  <!-- cos55=0.574 sin55=0.819 -->
+  <!-- Outer top=(67+40*0.574, 80-40*0.819)=(90,47.2) bottom=(90,112.8) -->
+  <!-- Inner top=(67+26*0.574, 80-26*0.819)=(81.9,58.7) bottom=(81.9,101.3) -->
+  <path d="M 90,47.2 A 40,40 0 1,0 90,112.8 L 81.9,101.3 A 26,26 0 1,1 81.9,58.7 Z" fill="#E8961E"/>
+
+  <!-- White U shape with nub -->
+  <!-- Left arm: x=57-69, Right arm: x=81-93, top y=36, outer bottom y=120, nub y=120-132 -->
+  <path d="
+    M 57,36
+    L 57,98 Q 57,122 75,122 L 75,130 Q 75,136 80,136 Q 85,136 85,130 L 85,122 Q 103,122 103,98 L 103,36
+    L 91,36 L 91,92 Q 91,110 80,110 Q 69,110 69,92 L 69,36
+    Z
+  " fill="white"/>
+
+  <!-- "Valley" text (bold, navy) -->
+  <text x="186" y="100" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="72" font-weight="800" fill="#1D2772" letter-spacing="-1">Valley</text>
+
+  <!-- "CREDIT UNION" text (semi-bold, navy, smaller) -->
+  <text x="188" y="136" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="30" font-weight="600" fill="#1D2772" letter-spacing="3">CREDIT UNION</text>
+</svg>

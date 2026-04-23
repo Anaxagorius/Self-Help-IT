@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Valley Credit Union icon">
+  <!-- Navy rounded square background -->
+  <rect width="200" height="200" rx="38" fill="#1D2772"/>
+
+  <!-- Gold C shape: thick ring arc, opening on the right (~55° gap each side) -->
+  <!-- Center (84,100), outer R=50, inner R=32 -->
+  <!-- At 55°: cos=0.574 sin=0.819 -->
+  <!-- Outer: top=(84+50*0.574, 100-50*0.819)=(112.7,59.1) bottom=(112.7,140.9) -->
+  <!-- Inner: top=(84+32*0.574, 100-32*0.819)=(102.4,73.8) bottom=(102.4,126.2) -->
+  <path d="M 112.7,59.1 A 50,50 0 1,0 112.7,140.9 L 102.4,126.2 A 32,32 0 1,1 102.4,73.8 Z" fill="#E8961E"/>
+
+  <!-- White U shape -->
+  <!-- Outer U: left x=72, right x=118, arms top y=48, curve center y=126, outer bottom y=152 -->
+  <!-- Inner U: left x=88, right x=104, cutout top y=48, inner curve center y=118 -->
+  <!-- Nub: x=90-110, y=148-162 -->
+  <path d="
+    M 72,48
+    L 72,124 Q 72,152 95,152 L 95,160 Q 95,168 100,168 Q 105,168 105,160 L 105,152 Q 128,152 128,124 L 128,48
+    L 112,48 L 112,118 Q 112,136 100,136 Q 88,136 88,118 L 88,48
+    Z
+  " fill="white"/>
+</svg>
