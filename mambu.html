@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Mambu self-help guide for Valley Credit Union staff – troubleshoot common Mambu issues before calling the IT Service Desk." />
+  <title>Mambu | IT Self-Help Portal</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐘</text></svg>" />
+</head>
+<body>
+
+<!-- Skip to content (accessibility) -->
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<!-- ══════════════════ HEADER ══════════════════ -->
+<header id="site-header" role="banner">
+  <div class="header-inner">
+    <a href="index.html" class="header-logo" aria-label="IT Self-Help Portal Home">
+      <span class="lighthouse-icon" aria-hidden="true">🏦</span>
+      <span class="header-logo-text">
+        <span class="site-name">IT Self-Help Portal</span>
+        <span class="site-sub">Valley Credit Union</span>
+      </span>
+    </a>
+
+    <div class="search-wrapper" role="search">
+      <label for="search-input" class="visually-hidden">Search for help</label>
+      <input
+        type="search"
+        id="search-input"
+        placeholder="🔍  Search for help… (e.g. printer, password, VPN)"
+        autocomplete="off"
+        spellcheck="false"
+      />
+      <button class="search-btn" aria-label="Search">&#128269;</button>
+    </div>
+
+    <button id="theme-toggle" aria-label="Switch to dark mode">🌙 Dark</button>
+    <a href="#call-it-section" class="call-it-badge">📞 Call IT Now</a>
+  </div>
+</header>
+
+<!-- ══════════════════ CATEGORY NAV ══════════════════ -->
+<nav id="cat-nav" aria-label="Help Categories">
+  <div class="cat-nav-inner">
+    <a href="index.html" class="cat-nav-home">🏠 Home</a>
+    <a href="passwords.html" class="cat-nav-link" aria-label="Passwords &amp; Accounts">🔐 Passwords</a>
+    <a href="network.html" class="cat-nav-link" aria-label="Internet &amp; Network">🌐 Network</a>
+    <a href="email.html" class="cat-nav-link" aria-label="Email &amp; Calendar">📧 Email</a>
+    <a href="printers.html" class="cat-nav-link" aria-label="Printers &amp; Scanners">🖨️ Printers</a>
+    <a href="computer.html" class="cat-nav-link" aria-label="Computer Performance">💻 Computer</a>
+    <a href="phones.html" class="cat-nav-link" aria-label="Phones &amp; Teams">📞 Phones</a>
+    <a href="banking.html" class="cat-nav-link" aria-label="Core Banking Systems">🏦 Banking</a>
+    <a href="mambu.html" class="cat-nav-link active" aria-label="Mambu">🐘 Mambu</a>
+  </div>
+</nav>
+
+<!-- ══════════════════ MAIN ══════════════════ -->
+<main id="main-content">
+
+  <!-- Search results (hidden until user searches) -->
+  <section id="search-results-section" aria-label="Search Results">
+    <div class="section-header">
+      <h2>Search Results</h2>
+      <div class="section-divider"></div>
+    </div>
+    <ul class="search-results-list" id="search-results-list" aria-live="polite"></ul>
+  </section>
+
+  <!-- No results message -->
+  <div id="no-results" role="status" aria-live="polite">
+    <div class="no-results-icon">🌊</div>
+    <h3>Nothing washed ashore…</h3>
+    <p>
+      Couldn't find a match. Try different words, or browse the other categories using the nav bar above.
+      If all else fails, <a href="#call-it-section">give IT a shout</a>!
+    </p>
+  </div>
+
+  <div id="main-categories">
+    <section class="category-section" id="cat-mambu" aria-labelledby="h-mambu">
+      <div class="category-header">
+        <div class="category-icon icon-bg-red" aria-hidden="true">🐘</div>
+        <div>
+          <h2 id="h-mambu">Mambu</h2>
+          <p class="category-desc">Most probable incidents &amp; practical employee guidance based on Mambu documentation and real‑world feedback.</p>
+        </div>
+      </div>
+
+      <div class="guides-grid">
+
+        <!-- 1. Login & Access Problems -->
+        <div class="guide-card" data-id="mambu-login">
+          <div class="guide-header">
+            <div class="guide-title-area">
+              <div class="guide-title">🔒 Can't log in to Mambu</div>
+              <div class="guide-tags">
+                <span class="guide-tag tag-common">Most Common</span>
+                <span class="guide-tag tag-easy">Easy Fix</span>
+              </div>
+            </div>
+            <span class="guide-chevron" aria-hidden="true">▼</span>
+          </div>
+          <div class="guide-body">
+            <div class="guide-content">
+              <p class="guide-intro">Endless loading screen, sudden logout after an update, or a blank page? This fix resolves about 90% of Mambu login issues.</p>
+              <ol class="steps-list">
+                <li>
+                  <span class="step-num">1</span>
+                  <span class="step-text"><strong>Log out of Mambu</strong> completely if you're stuck on a loading screen.</span>
+                </li>
+                <li>
+                  <span class="step-num">2</span>
+                  <span class="step-text"><strong>Close the browser entirely</strong> — don't just close the tab.</span>
+                </li>
+                <li>
+                  <span class="step-num">3</span>
+                  <span class="step-text"><strong>Clear your browser cache &amp; cookies</strong> — press <code>Ctrl</code> + <code>Shift</code> + <code>Delete</code>, select "All time", tick Cookies and Cached images, then click Clear.</span>
+                </li>
+                <li>
+                  <span class="step-num">4</span>
+                  <span class="step-text"><strong>Reopen the browser</strong> and log back in to Mambu.</span>
+                </li>
+                <li>
+                  <span class="step-num">5</span>
+                  <span class="step-text">If access is still blocked, confirm that your <strong>role still includes the required permissions</strong> — an admin change may have affected your account.</span>
+                </li>
+              </ol>
+              <div class="tip-box">
+                <span class="box-icon">💡</span>
+                <span><strong>Tip:</strong> If many staff are affected at once, check the <strong>Mambu Status Page</strong> or the internal IT Teams channel before escalating.</span>
+              </div>
+              <div class="call-box">
+                <span class="box-icon">📞</span>
+                <span>If your access is still blocked after clearing cache, <strong>contact your internal admin</strong> — not Mambu Support directly. For account lockouts after failed login attempts, let IT know.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Slowness / Frozen -->
+        <div class="guide-card" data-id="mambu-slow">
+          <div class="guide-header">
+            <div class="guide-title-area">
+              <div class="guide-title">⏳ Mambu is running slowly or appears frozen</div>
+              <div class="guide-tags">
+                <span class="guide-tag tag-moderate">Moderate</span>
+              </div>
+            </div>
+            <span class="guide-chevron" aria-hidden="true">▼</span>
+          </div>
+          <div class="guide-body">
+            <div class="guide-content">
+              <p class="guide-intro">Pages loading slowly, search taking forever, or transactions appearing stuck? This is usually a planned maintenance window or a regional cloud performance event — not a crash.</p>
+              <ol class="steps-list">
+                <li>
+                  <span class="step-num">1</span>
+                  <span class="step-text"><strong>Do not retry transactions</strong> repeatedly — submitting multiple times during slowness can cause duplicate actions once the system recovers.</span>
+                </li>
+                <li>
+                  <span class="step-num">2</span>
+                  <span class="step-text"><strong>Avoid refreshing transaction pages</strong> while a submission is in progress.</span>
+                </li>
+                <li>
+                  <span class="step-num">3</span>
+                  <span class="step-text">Check the <strong>internal Teams IT channel</strong> or the Mambu Status Page for any posted maintenance notice.</span>
+                </li>
+                <li>
+                  <span class="step-num">4</span>
+                  <span class="step-text">If no notice is posted and slowness persists beyond 10 minutes, <strong>let IT know</strong> so we can check network and server health.</span>
+                </li>
+                <li>
+                  <span class="step-num">5</span>
+                  <span class="step-text"><strong>Resume normal work</strong> only after IT or the status page confirms service is healthy.</span>
+                </li>
+              </ol>
+              <div class="tip-box">
+                <span class="box-icon">💡</span>
+                <span><strong>Important:</strong> Retrying during a slowdown can cause duplicate transactions once the system recovers. When in doubt, wait and verify.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Transaction Failed -->
+        <div class="guide-card" data-id="mambu-transaction">
+          <div class="guide-header">
+            <div class="guide-title-area">
+              <div class="guide-title">❌ Transaction failed or "cannot be completed"</div>
+              <div class="guide-tags">
+                <span class="guide-tag tag-moderate">Moderate</span>
+                <span class="guide-tag tag-call-it">May Need IT</span>
+              </div>
+            </div>
+            <span class="guide-chevron" aria-hidden="true">▼</span>
+          </div>
+          <div class="guide-body">
+            <div class="guide-content">
+              <p class="guide-intro">Deposit or disbursement won't approve, or an error appears with no clear reason? Most transaction failures are business-rule validations enforced by Mambu — not system faults.</p>
+              <ol class="steps-list">
+                <li>
+                  <span class="step-num">1</span>
+                  <span class="step-text">Check the <strong>account status</strong> — the account must be active and approved. Closed or pending accounts cannot process transactions.</span>
+                </li>
+                <li>
+                  <span class="step-num">2</span>
+                  <span class="step-text">Confirm that all <strong>required approval steps</strong> have been completed before attempting the transaction.</span>
+                </li>
+                <li>
+                  <span class="step-num">3</span>
+                  <span class="step-text">Verify the <strong>amount and dates</strong> are within the product's configured limits.</span>
+                </li>
+                <li>
+                  <span class="step-num">4</span>
+                  <span class="step-text">Ensure your user account has <strong>transaction rights</strong> for this action — permissions may have changed after an admin update.</span>
+                </li>
+                <li>
+                  <span class="step-num">5</span>
+                  <span class="step-text">If the transaction is still partially posted or stuck, <strong>do not retry</strong> — note the timestamp and account ID and escalate.</span>
+                </li>
+              </ol>
+              <div class="call-box">
+                <span class="box-icon">📞</span>
+                <span>If you can't identify the cause, <strong>capture the timestamp, account ID, and the exact error message</strong>, then escalate internally with that evidence. Do not retry a failed transaction before checking with IT.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Search Not Working -->
+        <div class="guide-card" data-id="mambu-search">
+          <div class="guide-header">
+            <div class="guide-title-area">
+              <div class="guide-title">🔍 Can't find a member or account in Mambu</div>
+              <div class="guide-tags">
+                <span class="guide-tag tag-easy">Easy Fix</span>
+              </div>
+            </div>
+            <span class="guide-chevron" aria-hidden="true">▼</span>
+          </div>
+          <div class="guide-body">
+            <div class="guide-content">
+              <p class="guide-intro">A member exists in the system but search returns nothing? Mambu's search prioritises exact and categorised matches — it's not a fuzzy Google-style search.</p>
+              <ol class="steps-list">
+                <li>
+                  <span class="step-num">1</span>
+                  <span class="step-text"><strong>Remove all active filters</strong> before searching — a leftover filter is the most common reason nothing appears.</span>
+                </li>
+                <li>
+                  <span class="step-num">2</span>
+                  <span class="step-text">Search using the <strong>full name or member/account ID</strong> rather than a partial name.</span>
+                </li>
+                <li>
+                  <span class="step-num">3</span>
+                  <span class="step-text">Confirm you are in the <strong>correct search category</strong> — searching under "Clients" won't return account numbers, and vice versa.</span>
+                </li>
+                <li>
+                  <span class="step-num">4</span>
+                  <span class="step-text">If a record was very recently created, allow a minute or two — there can be a brief <strong>search indexing delay</strong> before new records appear.</span>
+                </li>
+              </ol>
+              <div class="tip-box">
+                <span class="box-icon">💡</span>
+                <span>Always start with the member ID or account number when available — name searches can miss records if spelling is slightly off.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Outage / Maintenance -->
+        <div class="guide-card" data-id="mambu-outage">
+          <div class="guide-header">
+            <div class="guide-title-area">
+              <div class="guide-title">🌐 Mambu appears to be down or unavailable</div>
+              <div class="guide-tags">
+                <span class="guide-tag tag-moderate">Moderate</span>
+              </div>
+            </div>
+            <span class="guide-chevron" aria-hidden="true">▼</span>
+          </div>
+          <div class="guide-body">
+            <div class="guide-content">
+              <p class="guide-intro">Mambu is a cloud SaaS platform — scheduled maintenance and brief regional interruptions are a normal part of operations, not signs of a failing system.</p>
+              <ol class="steps-list">
+                <li>
+                  <span class="step-num">1</span>
+                  <span class="step-text">Check the <strong>internal IT Teams channel</strong> or the banner at the top of this portal — a notice is posted when we're aware of an issue.</span>
+                </li>
+                <li>
+                  <span class="step-num">2</span>
+                  <span class="step-text">Verify on the <strong>Mambu Status Page</strong> whether a maintenance event or incident has been declared.</span>
+                </li>
+                <li>
+                  <span class="step-num">3</span>
+                  <span class="step-text"><strong>Pause any sensitive operations</strong> — don't attempt to process transactions or approvals during a declared outage.</span>
+                </li>
+                <li>
+                  <span class="step-num">4</span>
+                  <span class="step-text"><strong>Resume work</strong> only once IT or the status page confirms the platform is fully operational.</span>
+                </li>
+              </ol>
+              <div class="call-box">
+                <span class="box-icon">📞</span>
+                <span>If no outage is shown on the status page but Mambu is unreachable for your whole branch, <strong>call IT</strong> — it may be a local network issue rather than Mambu itself.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Missing Permissions -->
+        <div class="guide-card" data-id="mambu-permissions">
+          <div class="guide-header">
+            <div class="guide-title-area">
+              <div class="guide-title">🚫 Permissions missing for tasks I used to do</div>
+              <div class="guide-tags">
+                <span class="guide-tag tag-call-it">May Need IT</span>
+              </div>
+            </div>
+            <span class="guide-chevron" aria-hidden="true">▼</span>
+          </div>
+          <div class="guide-body">
+            <div class="guide-content">
+              <p class="guide-intro">After a system update or admin change you may find that actions or menu items that were available before are now missing or greyed out.</p>
+              <ol class="steps-list">
+                <li>
+                  <span class="step-num">1</span>
+                  <span class="step-text">First, <strong>log out and back in</strong> — your session may be holding a cached version of your old permissions.</span>
+                </li>
+                <li>
+                  <span class="step-num">2</span>
+                  <span class="step-text">Clear your <strong>browser cache</strong> (<code>Ctrl</code> + <code>Shift</code> + <code>Delete</code>) and log in again to ensure the latest role settings are loaded.</span>
+                </li>
+                <li>
+                  <span class="step-num">3</span>
+                  <span class="step-text">Confirm with a colleague whether <strong>they have the same permission</strong> — if it's missing for everyone, it may be a deliberate admin change.</span>
+                </li>
+                <li>
+                  <span class="step-num">4</span>
+                  <span class="step-text">If the permission is missing only for you, <strong>contact your internal Mambu admin</strong> to review and restore your role assignment.</span>
+                </li>
+              </ol>
+              <div class="tip-box">
+                <span class="box-icon">💡</span>
+                <span>Mambu permission changes are made by your internal admin team — Mambu Support cannot change your organisation's role settings directly.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Hard to Use / Training -->
+        <div class="guide-card" data-id="mambu-training">
+          <div class="guide-header">
+            <div class="guide-title-area">
+              <div class="guide-title">📚 "Mambu is confusing — I'm not sure I'm doing this right"</div>
+              <div class="guide-tags">
+                <span class="guide-tag tag-easy">Guidance</span>
+              </div>
+            </div>
+            <span class="guide-chevron" aria-hidden="true">▼</span>
+          </div>
+          <div class="guide-body">
+            <div class="guide-content">
+              <p class="guide-intro">Mambu is a powerful platform that requires some learning. Many reported "incidents" turn out to be process questions — not technical failures. You're not alone.</p>
+              <ol class="steps-list">
+                <li>
+                  <span class="step-num">1</span>
+                  <span class="step-text">Check whether your question is covered in the <strong>internal how-to guides</strong> shared by your team lead — these are written in plain language for your specific role, unlike the official Mambu manuals.</span>
+                </li>
+                <li>
+                  <span class="step-num">2</span>
+                  <span class="step-text">Ask a <strong>colleague who regularly uses that feature</strong> — a quick 2-minute walkthrough is often faster than any documentation.</span>
+                </li>
+                <li>
+                  <span class="step-num">3</span>
+                  <span class="step-text">If you're unsure whether you've completed a step correctly, <strong>stop before submitting</strong> and double-check with your supervisor rather than guessing.</span>
+                </li>
+                <li>
+                  <span class="step-num">4</span>
+                  <span class="step-text">Request a <strong>training refresher</strong> through your team lead if a particular workflow consistently causes confusion — this protects both you and members.</span>
+                </li>
+              </ol>
+              <div class="tip-box">
+                <span class="box-icon">💡</span>
+                <span><strong>Good to know:</strong> Mambu's official documentation is written for technical administrators, not frontline staff. If something in the docs feels overly complex, that's normal — ask internally for a plain-language explanation.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /guides-grid -->
+    </section>
+
+    <!-- Call IT Section -->
+    <section id="call-it-section" aria-labelledby="h-callit">
+      <div class="call-it-top">
+        <span class="call-it-emoji" aria-hidden="true">🚨</span>
+        <div>
+          <h2 id="h-callit">Stop Troubleshooting — Call IT Right Now</h2>
+          <p>
+            Some situations go beyond self-help. If any of the following apply to you,
+            <strong>put down the mouse</strong> and give us a call straight away.
+            At the credit union, protecting member data is our top priority.
+          </p>
+        </div>
+      </div>
+
+      <div class="call-it-grid">
+        <div class="call-it-item">
+          <span class="ci-icon" aria-hidden="true">🦠</span>
+          <span>You see <strong>pop-ups demanding payment</strong>, or your files appear to be encrypted with a ransom note.</span>
+        </div>
+        <div class="call-it-item">
+          <span class="ci-icon" aria-hidden="true">🔓</span>
+          <span>You suspect <strong>your account has been hacked</strong> or someone else is accessing your computer remotely.</span>
+        </div>
+        <div class="call-it-item">
+          <span class="ci-icon" aria-hidden="true">📧</span>
+          <span>You <strong>clicked a link or opened an attachment</strong> in a suspicious email and now something feels wrong.</span>
+        </div>
+        <div class="call-it-item">
+          <span class="ci-icon" aria-hidden="true">🏦</span>
+          <span>The <strong>core banking system is completely down</strong> and members are waiting at the counter.</span>
+        </div>
+        <div class="call-it-item">
+          <span class="ci-icon" aria-hidden="true">💾</span>
+          <span>You accidentally <strong>deleted important member or financial data</strong> that cannot be recovered locally.</span>
+        </div>
+        <div class="call-it-item">
+          <span class="ci-icon" aria-hidden="true">🔥</span>
+          <span>Your computer is <strong>making unusual noises, smells like burning</strong>, or is physically damaged.</span>
+        </div>
+        <div class="call-it-item">
+          <span class="ci-icon" aria-hidden="true">🔒</span>
+          <span>Your <strong>account is fully locked out</strong> and you cannot access anything — email, Windows, or banking.</span>
+        </div>
+        <div class="call-it-item">
+          <span class="ci-icon" aria-hidden="true">📞</span>
+          <span>Someone calls claiming to be <strong>"IT support"</strong> asking for your password or remote access. <em>Hang up.</em> Call us to verify.</span>
+        </div>
+        <div class="call-it-item">
+          <span class="ci-icon" aria-hidden="true">⚠️</span>
+          <span>A <strong>Mambu transaction partially posted</strong> and you're unsure if it completed — do not retry. Call IT with the timestamp and account ID.</span>
+        </div>
+        <div class="call-it-item">
+          <span class="ci-icon" aria-hidden="true">🖥️</span>
+          <span>Your computer <strong>gets a Blue Screen repeatedly</strong> — more than once in a short period.</span>
+        </div>
+        <div class="call-it-item">
+          <span class="ci-icon" aria-hidden="true">👤</span>
+          <span>You notice a <strong>new user account or program installed</strong> on your computer that you didn't create.</span>
+        </div>
+        <div class="call-it-item">
+          <span class="ci-icon" aria-hidden="true">🌐</span>
+          <span>The <strong>entire branch has lost network/internet</strong> access and there's no known outage listed above.</span>
+        </div>
+      </div>
+
+      <div class="call-it-contact" role="region" aria-label="IT Contact Information">
+        <div class="contact-method">
+          <span class="cm-icon" aria-hidden="true">📧</span>
+          <span>
+            <span class="cm-label">Email (non-urgent)</span>
+            <span class="cm-value">tburchell@valleycreditunion.com · pmoore@valleycreditunion.com</span>
+          </span>
+        </div>
+        <div class="contact-method">
+          <span class="cm-icon" aria-hidden="true">💬</span>
+          <span>
+            <span class="cm-label">Teams Chat</span>
+            <span class="cm-value">IT Support</span>
+          </span>
+        </div>
+        <div class="contact-method">
+          <span class="cm-icon" aria-hidden="true">🕐</span>
+          <span>
+            <span class="cm-label">Hours</span>
+            <span class="cm-value">Mon–Fri · 8:30 am – 4:30 pm</span>
+          </span>
+        </div>
+      </div>
+    </section>
+  </div><!-- /#main-categories -->
+</main>
+
+<!-- Back to top -->
+<button id="back-to-top" aria-label="Back to top" title="Back to top">▲</button>
+
+<!-- ══════════════════ FOOTER ══════════════════ -->
+<footer id="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-logo" aria-hidden="true">⚓</div>
+    <p><strong>IT Self-Help Portal</strong> &nbsp;·&nbsp; Valley Credit Union</p>
+    <p class="footer-tagline">"We're always here to help but if you are a self starter, try these first!"</p>
+    <p>If you've tried everything and still need help, we're always happy to lend a hand.<br />
+       Teams message the <strong>IT Support</strong> channel.</p>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="passwords.html">Passwords</a>
+      <a href="network.html">Network</a>
+      <a href="email.html">Email</a>
+      <a href="printers.html">Printers</a>
+      <a href="computer.html">Computer</a>
+      <a href="phones.html">Phones</a>
+      <a href="banking.html">Banking</a>
+      <a href="mambu.html">Mambu</a>
+    </div>
+    <p style="margin-top: 16px; opacity: 0.5; font-size: 0.78rem;">
+      &copy; <span id="footer-year"></span> Valley Credit Union &nbsp;·&nbsp; For internal staff use only
+    </p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  // Set footer year dynamically
+  document.getElementById('footer-year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
