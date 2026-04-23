@@ -19,6 +19,7 @@
   const backToTop            = document.getElementById('back-to-top');
   const alertBanner          = document.getElementById('alert-banner');
   const alertClose           = document.getElementById('alert-close');
+  const themeToggle          = document.getElementById('theme-toggle');
 
   /* ── Build search index from guide cards ─────────────── */
   function buildSearchIndex() {
@@ -71,18 +72,23 @@
     });
   }
 
-  /* ── Quick link scroll ────────────────────────────────── */
+  /* ── Quick link navigation ────────────────────────────── */
   function initQuickLinks() {
     document.querySelectorAll('.quick-link-card').forEach(function (card) {
       card.addEventListener('click', function () {
-        const target = document.getElementById(card.dataset.target);
+        var href = card.dataset.href;
+        if (href) {
+          window.location.href = href;
+          return;
+        }
+        var target = document.getElementById(card.dataset.target);
         if (target) {
           target.scrollIntoView({ behavior: 'smooth', block: 'start' });
           // Open first guide in section automatically
-          const firstCard = target.querySelector('.guide-card');
+          var firstCard = target.querySelector('.guide-card');
           if (firstCard && !firstCard.classList.contains('open')) {
             firstCard.classList.add('open');
-            const h = firstCard.querySelector('.guide-header');
+            var h = firstCard.querySelector('.guide-header');
             if (h) h.setAttribute('aria-expanded', 'true');
           }
         }
@@ -199,6 +205,30 @@
     });
   }
 
+  /* ── Dark / Light Theme ──────────────────────────────── */
+  function applyTheme(dark) {
+    document.body.classList.toggle('dark-mode', dark);
+    if (themeToggle) {
+      themeToggle.textContent = dark ? '☀️ Light' : '🌙 Dark';
+      themeToggle.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+    }
+  }
+
+  function initThemeToggle() {
+    var saved = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var dark = saved === 'dark' || (saved === null && prefersDark);
+    applyTheme(dark);
+
+    if (themeToggle) {
+      themeToggle.addEventListener('click', function () {
+        var isDark = document.body.classList.contains('dark-mode');
+        applyTheme(!isDark);
+        localStorage.setItem('theme', !isDark ? 'dark' : 'light');
+      });
+    }
+  }
+
   /* ── Back to top ─────────────────────────────────────── */
   function initBackToTop() {
     if (!backToTop) return;
@@ -245,6 +275,7 @@
 
   /* ── Boot ─────────────────────────────────────────────── */
   document.addEventListener('DOMContentLoaded', function () {
+    initThemeToggle();
     buildSearchIndex();
     initAccordions();
     initQuickLinks();
