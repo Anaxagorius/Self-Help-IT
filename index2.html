@@ -1188,14 +1188,14 @@ mark {
 <!-- ══════════════════ CATEGORY NAV ══════════════════ -->
 <nav id="cat-nav" aria-label="Help Categories">
   <div class="cat-nav-inner">
-    <a href="index.html" class="cat-nav-home">🏠 Home</a>
-    <a href="passwords.html" class="cat-nav-link">🔐 Passwords</a>
-    <a href="network.html" class="cat-nav-link">🌐 Network</a>
-    <a href="email.html" class="cat-nav-link">📧 Email</a>
-    <a href="printers.html" class="cat-nav-link">🖨️ Printers</a>
-    <a href="computer.html" class="cat-nav-link">💻 Computer</a>
-    <a href="phones.html" class="cat-nav-link">📞 Phones</a>
-    <a href="banking.html" class="cat-nav-link">🏦 Banking</a>
+    <a href="#hero" class="cat-nav-home">🏠 Home</a>
+    <a href="#cat-passwords" class="cat-nav-link">🔐 Passwords</a>
+    <a href="#cat-network" class="cat-nav-link">🌐 Network</a>
+    <a href="#cat-email" class="cat-nav-link">📧 Email</a>
+    <a href="#cat-printers" class="cat-nav-link">🖨️ Printers</a>
+    <a href="#cat-computer" class="cat-nav-link">💻 Computer</a>
+    <a href="#cat-phones" class="cat-nav-link">📞 Phones</a>
+    <a href="#cat-banking" class="cat-nav-link">🏦 Banking</a>
     <a href="mambu.html" class="cat-nav-link">🐘 Mambu</a>
     <a href="software.html" class="cat-nav-link">💾 Software</a>
   </div>
@@ -1314,31 +1314,31 @@ mark {
       <div class="section-divider"></div>
     </div>
     <div class="quick-links-grid">
-      <div class="quick-link-card" data-href="passwords.html" data-target="cat-passwords" role="button" tabindex="0" aria-label="Passwords &amp; Accounts">
+      <div class="quick-link-card" data-target="cat-passwords" role="button" tabindex="0" aria-label="Passwords &amp; Accounts">
         <span class="ql-icon">🔐</span>
         <span class="ql-label">Passwords &amp; Accounts</span>
       </div>
-      <div class="quick-link-card" data-href="network.html" data-target="cat-network" role="button" tabindex="0" aria-label="Internet &amp; Network">
+      <div class="quick-link-card" data-target="cat-network" role="button" tabindex="0" aria-label="Internet &amp; Network">
         <span class="ql-icon">🌐</span>
         <span class="ql-label">Internet &amp; Network</span>
       </div>
-      <div class="quick-link-card" data-href="email.html" data-target="cat-email" role="button" tabindex="0" aria-label="Email &amp; Calendar">
+      <div class="quick-link-card" data-target="cat-email" role="button" tabindex="0" aria-label="Email &amp; Calendar">
         <span class="ql-icon">📧</span>
         <span class="ql-label">Email &amp; Calendar</span>
       </div>
-      <div class="quick-link-card" data-href="printers.html" data-target="cat-printers" role="button" tabindex="0" aria-label="Printers &amp; Scanners">
+      <div class="quick-link-card" data-target="cat-printers" role="button" tabindex="0" aria-label="Printers &amp; Scanners">
         <span class="ql-icon">🖨️</span>
         <span class="ql-label">Printers &amp; Scanners</span>
       </div>
-      <div class="quick-link-card" data-href="computer.html" data-target="cat-computer" role="button" tabindex="0" aria-label="Computer Performance">
+      <div class="quick-link-card" data-target="cat-computer" role="button" tabindex="0" aria-label="Computer Performance">
         <span class="ql-icon">💻</span>
         <span class="ql-label">Computer Performance</span>
       </div>
-      <div class="quick-link-card" data-href="phones.html" data-target="cat-phones" role="button" tabindex="0" aria-label="Phones &amp; Teams">
+      <div class="quick-link-card" data-target="cat-phones" role="button" tabindex="0" aria-label="Phones &amp; Teams">
         <span class="ql-icon">📞</span>
         <span class="ql-label">Phones &amp; Teams</span>
       </div>
-      <div class="quick-link-card" data-href="banking.html" data-target="cat-banking" role="button" tabindex="0" aria-label="Core Banking Systems">
+      <div class="quick-link-card" data-target="cat-banking" role="button" tabindex="0" aria-label="Core Banking Systems">
         <span class="ql-icon">🏦</span>
         <span class="ql-label">Core Banking Systems</span>
       </div>
@@ -2836,24 +2836,28 @@ mark {
     <p>If you've tried everything and still need help, we're always happy to lend a hand.<br />
        Teams message the <strong>IT Support</strong> channel.</p>
     <div class="footer-links">
-      <a href="passwords.html">Passwords</a>
-      <a href="network.html">Network</a>
-      <a href="email.html">Email</a>
-      <a href="printers.html">Printers</a>
-      <a href="computer.html">Computer</a>
-      <a href="phones.html">Phones</a>
-      <a href="banking.html">Banking</a>
+      <a href="#cat-passwords">Passwords</a>
+      <a href="#cat-network">Network</a>
+      <a href="#cat-email">Email</a>
+      <a href="#cat-printers">Printers</a>
+      <a href="#cat-computer">Computer</a>
+      <a href="#cat-phones">Phones</a>
+      <a href="#cat-banking">Banking</a>
       <a href="mambu.html">Mambu</a>
       <a href="software.html">Software</a>
       <a href="#call-it-section">Call IT</a>
     </div>
     <p style="margin-top: 16px; opacity: 0.5; font-size: 0.78rem;">
-      &copy; 2026 Valley Credit Union &nbsp;·&nbsp; For internal staff use only
+      &copy; <span id="footer-year"></span> Valley Credit Union &nbsp;·&nbsp; For internal staff use only
     </p>
   </div>
 </footer>
 
 
 <script src="js/main.js"></script>
+<script>
+  // Set footer year dynamically
+  document.getElementById('footer-year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
