@@ -1,0 +1,35 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.16/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.16",
+  "version": "1.0.0",
+  "id": "11111111-1111-1111-1111-111111111111",
+  "packageName": "com.valleycreditunion.itselfhelp",
+  "developer": {
+    "name": "Valley Credit Union IT",
+    "websiteUrl": "https://REPLACE",
+    "privacyUrl": "https://REPLACE/privacy",
+    "termsOfUseUrl": "https://REPLACE/terms"
+  },
+  "name": {
+    "short": "IT Self-Help",
+    "full": "VCU IT Self-Help Portal"
+  },
+  "description": {
+    "short": "Internal IT self-help portal",
+    "full": "Step-by-step IT troubleshooting for VCU staff"
+  },
+  "icons": {
+    "outline": "outline-icon.png",
+    "color": "color-icon.png"
+  },
+  "accentColor": "#1a3a5c",
+  "staticTabs": [{
+    "entityId": "home",
+    "name": "IT Self-Help",
+    "contentUrl": "https://REPLACE/index.html",
+    "websiteUrl": "https://REPLACE/index.html",
+    "scopes": ["personal"]
+  }],
+  "permissions": ["identity"],
+  "validDomains": ["REPLACE"]
+}
