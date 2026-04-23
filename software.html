@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Software self-help guide for Valley Credit Union staff – troubleshoot common issues with Fiserv, Mobile App, Finicity, ASAPP, Collabria, and Desjardins before calling the IT Service Desk." />
+  <title>Software &amp; Apps | IT Self-Help Portal</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>" />
+</head>
+<body>
+
+<!-- Skip to content (accessibility) -->
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<!-- ══════════════════ HEADER ══════════════════ -->
+<header id="site-header" role="banner">
+  <div class="header-inner">
+    <a href="index.html" class="header-logo" aria-label="IT Self-Help Portal Home">
+      <span class="lighthouse-icon" aria-hidden="true">🏦</span>
+      <span class="header-logo-text">
+        <span class="site-name">IT Self-Help Portal</span>
+        <span class="site-sub">Valley Credit Union</span>
+      </span>
+    </a>
+
+    <div class="search-wrapper" role="search">
+      <label for="search-input" class="visually-hidden">Search for help</label>
+      <input
+        type="search"
+        id="search-input"
+        placeholder="🔍  Search for help… (e.g. printer, password, VPN)"
+        autocomplete="off"
+        spellcheck="false"
+      />
+      <button class="search-btn" aria-label="Search">&#128269;</button>
+    </div>
+
+    <button id="theme-toggle" aria-label="Switch to dark mode">🌙 Dark</button>
+    <a href="#call-it-section" class="call-it-badge">📞 Call IT Now</a>
+  </div>
+</header>
+
+<!-- ══════════════════ CATEGORY NAV ══════════════════ -->
+<nav id="cat-nav" aria-label="Help Categories">
+  <div class="cat-nav-inner">
+    <a href="index.html" class="cat-nav-home">🏠 Home</a>
+    <a href="passwords.html" class="cat-nav-link" aria-label="Passwords &amp; Accounts">🔐 Passwords</a>
+    <a href="network.html" class="cat-nav-link" aria-label="Internet &amp; Network">🌐 Network</a>
+    <a href="email.html" class="cat-nav-link" aria-label="Email &amp; Calendar">📧 Email</a>
+    <a href="printers.html" class="cat-nav-link" aria-label="Printers &amp; Scanners">🖨️ Printers</a>
+    <a href="computer.html" class="cat-nav-link" aria-label="Computer Performance">💻 Computer</a>
+    <a href="phones.html" class="cat-nav-link" aria-label="Phones &amp; Teams">📞 Phones</a>
+    <a href="banking.html" class="cat-nav-link" aria-label="Core Banking Systems">🏦 Banking</a>
+    <a href="mambu.html" class="cat-nav-link" aria-label="Mambu">🐘 Mambu</a>
+    <a href="software.html" class="cat-nav-link active" aria-label="Software &amp; Apps">💾 Software</a>
+  </div>
+</nav>
+
+<!-- ══════════════════ MAIN ══════════════════ -->
+<main id="main-content">
+
+  <!-- Search results (hidden until user searches) -->
+  <section id="search-results-section" aria-label="Search Results">
+    <div class="section-header">
+      <h2>Search Results</h2>
+      <div class="section-divider"></div>
+    </div>
+    <ul class="search-results-list" id="search-results-list" aria-live="polite"></ul>
+  </section>
+
+  <!-- No results message -->
+  <div id="no-results" role="status" aria-live="polite">
+    <div class="no-results-icon">🌊</div>
+    <h3>Nothing washed ashore…</h3>
+    <p>
+      Couldn't find a match. Try different words, or browse the other categories using the nav bar above.
+      If all else fails, <a href="#call-it-section">give IT a shout</a>!
+    </p>
+  </div>
+
+  <div id="main-categories">
+
+    <!-- ════════════════════════════════════════
+         SOFTWARE & APPS
+         ════════════════════════════════════════ -->
+    <section class="category-section" id="cat-software" aria-labelledby="h-software">
+      <div class="category-header">
+        <div class="category-icon icon-bg-blue" aria-hidden="true">💾</div>
+        <div>
+          <h2 id="h-software">Software &amp; Apps</h2>
+          <p class="category-desc">Self-help guides for Fiserv Financial-net, Valley CU Mobile App, Finicity, ASAPP, Collabria, and Desjardins Employer Solutions.</p>
+        </div>
+      </div>
+
+      <div class="guides-grid">
+
+        <!-- ─── 1. Fiserv Financial-net ─────────────────── -->
+        <div class="guide-card" data-id="sw-fiserv-login">
+          <div class="guide-header">
+            <div class="guide-title-area">
+              <div class="guide-title">🏦 Fiserv Financial-net – Can't log in</div>
+              <div class="guide-tags">
+                <span class="guide-tag tag-common">Common</span>
+                <span class="guide-tag tag-moderate">Moderate</span>
+              </div>
+            </div>
+            <span class="guide-chevron" aria-hidden="true">▼</span>
+          </div>
+          <div class="guide-body">
+            <div class="guide-content">
+              <p class="guide-intro">Fiserv Financial-net is our core banking platform. Login issues are usually quick to resolve.</p>
+              <ol class="steps-list">
+                <li>
+                  <span class="step-num">1</span>
+                  <span class="step-text">Confirm <strong>Caps Lock is off</strong> and you are using your <strong>Financial-net credentials</strong> — these are separate from your Windows or Microsoft 365 password.</span>
+                </li>
+                <li>
+                  <span class="step-num">2</span>
+                  <span class="step-text">Make sure you are on the <strong>credit union network</strong> or connected through VPN if working remotely. Financial-net is not accessible from open internet without VPN.</span>
+                </li>
+                <li>
+                  <span class="step-num">3</span>
+                  <span class="step-text">Clear your browser cache (<code>Ctrl</code> + <code>Shift</code> + <code>Delete</code> → select "All time" → clear cached images and files) and try logging in again.</span>
+                </li>
+                <li>
+                  <span class="step-num">4</span>
+                  <span class="step-text">If you see a <strong>"session expired"</strong> or <strong>"already logged in"</strong> message, close all browser windows completely and reopen them, then try again.</span>
+                </li>
+                <li>
+                  <span class="step-num">5</span>
+                  <span class="step-text">If your account appears <strong>locked after failed attempts</strong>, do not keep trying — this can trigger a longer lockout. Contact IT to reset it.</span>
+                </li>
+              </ol>
+              <div class="call-box">
+                <span class="box-icon">📞</span>
+                <span>If you cannot log in after these steps, or your account is locked, <strong>call IT right away</strong> — teller access must not stay down.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="guide-card" data-id="sw-fiserv-slow">
+          <div class="guide-header">
+            <div class="guide-title-area">
+              <div class="guide-title">⏳ Fiserv Financial-net – Running slowly or freezing</div>
+              <div class="guide-tags">
+                <span class="guide-tag tag-moderate">Moderate</span>
+              </div>
+            </div>
+            <span class="guide-chevron" aria-hidden="true">▼</span>
+          </div>
+          <div class="guide-body">
+            <div class="guide-content">
+              <p class="guide-intro">Sluggish performance in Financial-net can affect member service. Try these steps first.</p>
+              <ol class="steps-list">
+                <li>
+                  <span class="step-num">1</span>
+                  <span class="step-text">Check with <strong>other staff</strong> — if multiple people are affected, it is likely a server or network issue. Contact IT to investigate.</span>
+                </li>
+                <li>
+                  <span class="step-num">2</span>
+                  <span class="step-text">Close any <strong>extra browser tabs and unused programs</strong> to free up memory on your computer.</span>
+                </li>
+                <li>
+                  <span class="step-num">3</span>
+                  <span class="step-text"><strong>Log out and back in</strong> to Financial-net to refresh your session.</span>
+                </li>
+                <li>
+                  <span class="step-num">4</span>
+                  <span class="step-text">Try switching to a <strong>different supported browser</strong> (e.g., Microsoft Edge if you're using Chrome, or vice versa).</span>
+                </li>
+                <li>
+                  <span class="step-num">5</span>
+                  <span class="step-text">If the issue persists, <strong>restart your computer</strong> and try again before calling IT.</span>
+                </li>
+              </ol>
+              <div class="call-box">
+                <span class="box-icon">📞</span>
+                <span>Persistent slowness affecting member service? <strong>Call IT</strong> — we can check server and network health remotely.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ─── 2. Valley CU Mobile App (Fiserv) ──────── -->
+        <div class="guide-card" data-id="sw-mobile-app">
+          <div class="guide-header">
+            <div class="guide-title-area">
+              <div class="guide-title">📱 Valley CU Mobile App – Member can't log in or use the app</div>
+              <div class="guide-tags">
+                <span class="guide-tag tag-common">Common</span>
+                <span class="guide-tag tag-easy">Easy Fix</span>
+              </div>
+            </div>
+            <span class="guide-chevron" aria-hidden="true">▼</span>
+          </div>
+          <div class="guide-body">
+            <div class="guide-content">
+              <p class="guide-intro">The Valley CU Mobile Banking App is powered by the Fiserv platform. Here's how to guide members through common issues.</p>
+              <ol class="steps-list">
+                <li>
+                  <span class="step-num">1</span>
+                  <span class="step-text">Ask the member to confirm they are using the <strong>correct username and password</strong> for online/mobile banking — this is different from branch or phone PINs.</span>
+                </li>
+                <li>
+                  <span class="step-num">2</span>
+                  <span class="step-text">Check if the <strong>app is up to date</strong>. Ask the member to open the App Store (iOS) or Google Play Store (Android), search for "Valley Credit Union", and install any pending updates.</span>
+                </li>
+                <li>
+                  <span class="step-num">3</span>
+                  <span class="step-text">If the member is getting a <strong>"too many login attempts"</strong> message, their account may be temporarily locked. Have them wait 15 minutes and try again, or direct them to call Member Services.</span>
+                </li>
+                <li>
+                  <span class="step-num">4</span>
+                  <span class="step-text">Ask the member to <strong>close the app completely</strong> (swipe it away) and reopen it.</span>
+                </li>
+                <li>
+                  <span class="step-num">5</span>
+                  <span class="step-text">If the app shows an <strong>error message</strong>, note the exact wording and error code (if any) and report it to IT — this helps us identify platform-wide issues quickly.</span>
+                </li>
+                <li>
+                  <span class="step-num">6</span>
+                  <span class="step-text">As a last resort, guide the member to <strong>delete and reinstall the app</strong>. Their account data is stored on the Fiserv servers, so reinstalling does not delete their information.</span>
+                </li>
+              </ol>
+              <div class="info-box">
+                <span class="box-icon">ℹ️</span>
+                <span>The Valley CU Mobile App is available on the <strong>App Store</strong> and <strong>Google Play</strong>. More info at <a href="https://www.valleycreditunion.com/personal/accounts/mobile-banking" target="_blank" rel="noopener noreferrer">valleycreditunion.com</a>.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ─── 3. Finicity by Mastercard ──────────────── -->
+        <div class="guide-card" data-id="sw-finicity">
+          <div class="guide-header">
+            <div class="guide-title-area">
+              <div class="guide-title">💳 Finicity by Mastercard – Account linking issues</div>
+              <div class="guide-tags">
+                <span class="guide-tag tag-moderate">Moderate</span>
+                <span class="guide-tag tag-call-it">May Need IT</span>
+              </div>
+            </div>
+            <span class="guide-chevron" aria-hidden="true">▼</span>
+          </div>
+          <div class="guide-body">
+            <div class="guide-content">
+              <p class="guide-intro">Finicity by Mastercard provides financial data aggregation and open banking services. Members use it to link external accounts for verification or budgeting features.</p>
+              <ol class="steps-list">
+                <li>
+                  <span class="step-num">1</span>
+                  <span class="step-text">If a member reports that an <strong>external account won't link</strong>, first confirm they are entering the <strong>online banking credentials for that institution</strong> — not their Valley CU credentials.</span>
+                </li>
+                <li>
+                  <span class="step-num">2</span>
+                  <span class="step-text">Ask if they recently <strong>changed their password</strong> at the external bank — the Finicity connection will break if credentials change and must be re-linked.</span>
+                </li>
+                <li>
+                  <span class="step-num">3</span>
+                  <span class="step-text">Some institutions require the member to complete a <strong>multi-factor authentication (MFA) step</strong> within the linking flow. Ask the member to check for an SMS code or authenticator prompt.</span>
+                </li>
+                <li>
+                  <span class="step-num">4</span>
+                  <span class="step-text">If the connection was working before but suddenly broke, the <strong>Finicity service or the external bank's API</strong> may be temporarily unavailable. Ask the member to try again later or the next business day.</span>
+                </li>
+                <li>
+                  <span class="step-num">5</span>
+                  <span class="step-text">Note the <strong>name of the institution</strong> the member is trying to link and any error message shown. Escalate to IT if the problem is repeating for multiple members or multiple accounts.</span>
+                </li>
+              </ol>
+              <div class="call-box">
+                <span class="box-icon">📞</span>
+                <span>If Finicity linking is failing for multiple members or you suspect a service outage, <strong>contact IT</strong> so we can check the integration status.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ─── 4. ASAPP via League Data ───────────────── -->
+        <div class="guide-card" data-id="sw-asapp">
+          <div class="guide-header">
+            <div class="guide-title-area">
+              <div class="guide-title">🤝 ASAPP (via League Data) – Platform or feature not working</div>
+              <div class="guide-tags">
+                <span class="guide-tag tag-moderate">Moderate</span>
+                <span class="guide-tag tag-call-it">May Need IT</span>
+              </div>
+            </div>
+            <span class="guide-chevron" aria-hidden="true">▼</span>
+          </div>
+          <div class="guide-body">
+            <div class="guide-content">
+              <p class="guide-intro">ASAPP is our Open Experience Platform (OXP) delivered through League Data, providing digital banking features to Atlantic Canadian credit unions including Valley CU.</p>
+              <ol class="steps-list">
+                <li>
+                  <span class="step-num">1</span>
+                  <span class="step-text">If a <strong>specific feature or screen is not loading</strong>, try refreshing the page or restarting the app. Some features load asynchronously and a refresh often resolves it.</span>
+                </li>
+                <li>
+                  <span class="step-num">2</span>
+                  <span class="step-text">Check whether the issue affects <strong>all users or just one member</strong>. Widespread issues are likely platform-level and should be reported to IT immediately so we can contact League Data support.</span>
+                </li>
+                <li>
+                  <span class="step-num">3</span>
+                  <span class="step-text">If a member reports that their <strong>data is not showing</strong> correctly (wrong balances, missing transactions), advise them to log out and back in. If the issue persists, log the member's name and account info and escalate to IT.</span>
+                </li>
+                <li>
+                  <span class="step-num">4</span>
+                  <span class="step-text">Note the <strong>exact error message or behavior</strong> the member or staff member is experiencing — screenshots are very helpful. Pass this to IT so we can relay it to League Data / ASAPP support accurately.</span>
+                </li>
+                <li>
+                  <span class="step-num">5</span>
+                  <span class="step-text">Do not advise members to attempt workarounds involving their account settings or profile in the ASAPP platform without IT guidance, as some changes can affect their access.</span>
+                </li>
+              </ol>
+              <div class="info-box">
+                <span class="box-icon">ℹ️</span>
+                <span>ASAPP powers digital banking features across <strong>39 Atlantic Canadian credit unions</strong> via League Data's OXP partnership. More info at <a href="https://www.asappbanking.com" target="_blank" rel="noopener noreferrer">asappbanking.com</a>.</span>
+              </div>
+              <div class="call-box">
+                <span class="box-icon">📞</span>
+                <span>ASAPP issues often require escalation to League Data. <strong>Contact IT</strong> and we will raise a support ticket with League Data on your behalf.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ─── 5. Collabria Credit Cards ──────────────── -->
+        <div class="guide-card" data-id="sw-collabria">
+          <div class="guide-header">
+            <div class="guide-title-area">
+              <div class="guide-title">💳 Collabria – Credit card system issues</div>
+              <div class="guide-tags">
+                <span class="guide-tag tag-common">Common</span>
+                <span class="guide-tag tag-moderate">Moderate</span>
+              </div>
+            </div>
+            <span class="guide-chevron" aria-hidden="true">▼</span>
+          </div>
+          <div class="guide-body">
+            <div class="guide-content">
+              <p class="guide-intro">Collabria provides credit card services for Valley Credit Union members. Here's how to handle common issues.</p>
+              <ol class="steps-list">
+                <li>
+                  <span class="step-num">1</span>
+                  <span class="step-text">For <strong>member inquiries about their Collabria card</strong> (balance, transactions, disputes), direct them to the <strong>Collabria Cardholder Services</strong> number on the back of their card or the Collabria website. Valley CU staff do not have direct access to Collabria cardholder account details.</span>
+                </li>
+                <li>
+                  <span class="step-num">2</span>
+                  <span class="step-text">If you are trying to <strong>access the Collabria staff portal</strong> and cannot log in, check that you are using your <strong>Collabria-specific staff credentials</strong> (separate from your Valley CU Windows login).</span>
+                </li>
+                <li>
+                  <span class="step-num">3</span>
+                  <span class="step-text">If the Collabria portal is <strong>loading slowly or not responding</strong>, first check if other staff are experiencing the same issue. If yes, it may be a Collabria service outage — note the time and contact IT.</span>
+                </li>
+                <li>
+                  <span class="step-num">4</span>
+                  <span class="step-text">For <strong>new card applications or limit increases</strong> that are not processing, verify all required fields are complete and that the member's information in our system matches what Collabria has on file. Discrepancies can cause processing errors.</span>
+                </li>
+                <li>
+                  <span class="step-num">5</span>
+                  <span class="step-text">If a member's card is <strong>declined at point of sale</strong>, this is handled by Collabria directly. Direct the member to call the number on the back of their card. If the issue appears systemic (multiple members), contact IT.</span>
+                </li>
+              </ol>
+              <div class="info-box">
+                <span class="box-icon">ℹ️</span>
+                <span>Collabria credit card services for Valley Credit Union members: <a href="https://www.collabriacreditcards.ca/affiliate_valley-credit-union/" target="_blank" rel="noopener noreferrer">collabriacreditcards.ca</a>.</span>
+              </div>
+              <div class="call-box">
+                <span class="box-icon">📞</span>
+                <span>For Collabria portal outages or issues affecting multiple members, <strong>contact IT</strong> and we will reach out to Collabria support directly.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ─── 6. Desjardins Employer Solutions ───────── -->
+        <div class="guide-card" data-id="sw-desjardins">
+          <div class="guide-header">
+            <div class="guide-title-area">
+              <div class="guide-title">🏢 Desjardins Employer Solutions – Payroll or benefits access issues</div>
+              <div class="guide-tags">
+                <span class="guide-tag tag-moderate">Moderate</span>
+                <span class="guide-tag tag-call-it">May Need IT</span>
+              </div>
+            </div>
+            <span class="guide-chevron" aria-hidden="true">▼</span>
+          </div>
+          <div class="guide-body">
+            <div class="guide-content">
+              <p class="guide-intro">Desjardins Employer Solutions handles our employee group benefits and related HR services. Here's what to try if you have trouble accessing the platform.</p>
+              <ol class="steps-list">
+                <li>
+                  <span class="step-num">1</span>
+                  <span class="step-text">Confirm you are visiting the <strong>correct Desjardins Employer Solutions portal URL</strong>. Bookmark it once you have the right one to avoid landing on an incorrect page.</span>
+                </li>
+                <li>
+                  <span class="step-num">2</span>
+                  <span class="step-text">Your <strong>Desjardins credentials are separate</strong> from your Valley CU Windows login. If you have forgotten your password, use the <strong>"Forgot password"</strong> link on the Desjardins login page to reset it via your registered email.</span>
+                </li>
+                <li>
+                  <span class="step-num">3</span>
+                  <span class="step-text">If you are not receiving the <strong>MFA verification code</strong>, check your spam/junk folder. Also confirm that the email address registered with Desjardins is your current Valley CU email address.</span>
+                </li>
+                <li>
+                  <span class="step-num">4</span>
+                  <span class="step-text">If you see a <strong>"permission denied" or "access restricted"</strong> message, your account role may not have access to the section you need. Contact your manager or HR to verify your access level.</span>
+                </li>
+                <li>
+                  <span class="step-num">5</span>
+                  <span class="step-text">For <strong>benefit claims or payroll discrepancies</strong>, these are handled by HR, not IT. Please reach out to HR directly. IT can only assist with technical access issues.</span>
+                </li>
+                <li>
+                  <span class="step-num">6</span>
+                  <span class="step-text">If the Desjardins portal is completely <strong>unreachable or showing a server error</strong>, it may be a service outage on Desjardins' end. Check back in 30 minutes or contact IT so we can investigate further.</span>
+                </li>
+              </ol>
+              <div class="call-box">
+                <span class="box-icon">📞</span>
+                <span>If you remain locked out of Desjardins Employer Solutions after these steps, <strong>contact IT</strong>. We will work with Desjardins support to restore your access.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /guides-grid -->
+    </section>
+
+    <!-- Call IT Section -->
+    <section id="call-it-section" aria-labelledby="h-callit">
+      <div class="call-it-top">
+        <span class="call-it-emoji" aria-hidden="true">🚨</span>
+        <div>
+          <h2 id="h-callit">Stop Troubleshooting — Call IT Right Now</h2>
+          <p>
+            Some situations go beyond self-help. If any of the following apply to you,
+            <strong>put down the mouse</strong> and give us a call straight away.
+            At the credit union, protecting member data is our top priority.
+          </p>
+        </div>
+      </div>
+
+      <div class="call-it-grid">
+        <div class="call-it-item">
+          <span class="ci-icon" aria-hidden="true">🦠</span>
+          <span>You see <strong>pop-ups demanding payment</strong>, or your files appear to be encrypted with a ransom note.</span>
+        </div>
+        <div class="call-it-item">
+          <span class="ci-icon" aria-hidden="true">🔓</span>
+          <span>You suspect <strong>your account has been hacked</strong> or someone else is accessing your computer remotely.</span>
+        </div>
+        <div class="call-it-item">
+          <span class="ci-icon" aria-hidden="true">📧</span>
+          <span>You <strong>clicked a link or opened an attachment</strong> in a suspicious email and now something feels wrong.</span>
+        </div>
+        <div class="call-it-item">
+          <span class="ci-icon" aria-hidden="true">🏦</span>
+          <span>The <strong>core banking system is completely down</strong> and members are waiting at the counter.</span>
+        </div>
+        <div class="call-it-item">
+          <span class="ci-icon" aria-hidden="true">💾</span>
+          <span>You accidentally <strong>deleted important member or financial data</strong> that cannot be recovered locally.</span>
+        </div>
+        <div class="call-it-item">
+          <span class="ci-icon" aria-hidden="true">🔥</span>
+          <span>Your computer is <strong>making unusual noises, smells like burning</strong>, or is physically damaged.</span>
+        </div>
+        <div class="call-it-item">
+          <span class="ci-icon" aria-hidden="true">🔒</span>
+          <span>Your <strong>account is fully locked out</strong> and you cannot access anything — email, Windows, or banking.</span>
+        </div>
+        <div class="call-it-item">
+          <span class="ci-icon" aria-hidden="true">📞</span>
+          <span>Someone calls claiming to be <strong>"IT support"</strong> asking for your password or remote access. <em>Hang up.</em> Call us to verify.</span>
+        </div>
+        <div class="call-it-item">
+          <span class="ci-icon" aria-hidden="true">⚠️</span>
+          <span>You see an <strong>unfamiliar error message</strong> on a banking or software screen that you've never seen before and don't understand.</span>
+        </div>
+        <div class="call-it-item">
+          <span class="ci-icon" aria-hidden="true">🖥️</span>
+          <span>Your computer <strong>gets a Blue Screen repeatedly</strong> — more than once in a short period.</span>
+        </div>
+        <div class="call-it-item">
+          <span class="ci-icon" aria-hidden="true">👤</span>
+          <span>You notice a <strong>new user account or program installed</strong> on your computer that you didn't create.</span>
+        </div>
+        <div class="call-it-item">
+          <span class="ci-icon" aria-hidden="true">🌐</span>
+          <span>The <strong>entire branch has lost network/internet</strong> access and there's no known outage listed above.</span>
+        </div>
+      </div>
+
+      <div class="call-it-contact" role="region" aria-label="IT Contact Information">
+        <div class="contact-method">
+          <span class="cm-icon" aria-hidden="true">📧</span>
+          <span>
+            <span class="cm-label">Email (non-urgent)</span>
+            <span class="cm-value">tburchell@valleycreditunion.com · pmoore@valleycreditunion.com</span>
+          </span>
+        </div>
+        <div class="contact-method">
+          <span class="cm-icon" aria-hidden="true">💬</span>
+          <span>
+            <span class="cm-label">Teams Chat</span>
+            <span class="cm-value">IT Support</span>
+          </span>
+        </div>
+        <div class="contact-method">
+          <span class="cm-icon" aria-hidden="true">🕐</span>
+          <span>
+            <span class="cm-label">Hours</span>
+            <span class="cm-value">Mon–Fri · 8:30 am – 4:30 pm</span>
+          </span>
+        </div>
+      </div>
+    </section>
+  </div><!-- /#main-categories -->
+</main>
+
+<!-- Back to top -->
+<button id="back-to-top" aria-label="Back to top" title="Back to top">▲</button>
+
+<!-- ══════════════════ FOOTER ══════════════════ -->
+<footer id="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-logo" aria-hidden="true">⚓</div>
+    <p><strong>IT Self-Help Portal</strong> &nbsp;·&nbsp; Valley Credit Union</p>
+    <p class="footer-tagline">"We're always here to help but if you are a self starter, try these first!"</p>
+    <p>If you've tried everything and still need help, we're always happy to lend a hand.<br />
+       Teams message the <strong>IT Support</strong> channel.</p>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="passwords.html">Passwords</a>
+      <a href="network.html">Network</a>
+      <a href="email.html">Email</a>
+      <a href="printers.html">Printers</a>
+      <a href="computer.html">Computer</a>
+      <a href="phones.html">Phones</a>
+      <a href="banking.html">Banking</a>
+      <a href="mambu.html">Mambu</a>
+      <a href="software.html">Software</a>
+    </div>
+    <p style="margin-top: 16px; opacity: 0.5; font-size: 0.78rem;">
+      &copy; <span id="footer-year"></span> Valley Credit Union &nbsp;·&nbsp; For internal staff use only
+    </p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  // Set footer year dynamically
+  document.getElementById('footer-year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
