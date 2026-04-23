@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="IT Self-Help Portal for Valley Credit Union staff – troubleshoot common problems before calling the IT Service Desk." />
   <title>IT Self-Help Portal | Valley Credit Union</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏦</text></svg>" />
+  <link rel="icon" href="images/vcu-logo-icon.svg" type="image/svg+xml" />
   <style>
 /* =====================================================
    Self-Help IT Portal – Nova Scotia Credit Union
@@ -105,6 +105,14 @@ body {
 .header-logo .lighthouse-icon {
   font-size: 2rem;
   line-height: 1;
+}
+
+.header-logo .vcu-icon {
+  height: 44px;
+  width: 44px;
+  display: block;
+  border-radius: 10px;
+  filter: drop-shadow(0 0 4px rgba(232,150,30,.55));
 }
 
 .header-logo-text .site-name {
@@ -1055,8 +1063,14 @@ body.dark-mode mark {
 }
 
 #site-footer .footer-logo {
-  font-size: 1.5rem;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
+}
+
+#site-footer .footer-logo img {
+  height: 52px;
+  width: 52px;
+  border-radius: 10px;
+  filter: drop-shadow(0 0 6px rgba(232,150,30,.45));
 }
 
 #site-footer strong { color: var(--white); }
@@ -1147,7 +1161,7 @@ mark {
 <header id="site-header" role="banner">
   <div class="header-inner">
     <a href="#" class="header-logo" aria-label="IT Self-Help Portal Home">
-      <span class="lighthouse-icon" aria-hidden="true">🏦</span>
+      <img src="images/vcu-logo-icon.svg" alt="" class="vcu-icon" aria-hidden="true" />
       <span class="header-logo-text">
         <span class="site-name">IT Self-Help Portal</span>
         <span class="site-sub">Valley Credit Union</span>
@@ -2816,7 +2830,7 @@ mark {
 <!-- ══════════════════ FOOTER ══════════════════ -->
 <footer id="site-footer" role="contentinfo">
   <div class="footer-inner">
-    <div class="footer-logo" aria-hidden="true">⚓</div>
+    <div class="footer-logo"><img src="images/vcu-logo-icon.svg" alt="Valley Credit Union" /></div>
     <p><strong>IT Self-Help Portal</strong> &nbsp;·&nbsp; Valley Credit Union</p>
     <p class="footer-tagline">"We're always here to help but if you are a self starter, try these first!"</p>
     <p>If you've tried everything and still need help, we're always happy to lend a hand.<br />
