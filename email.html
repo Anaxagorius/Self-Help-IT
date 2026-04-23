@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="IT Self-Help Portal for Valley Credit Union staff – troubleshoot common problems before calling the IT Service Desk." />
+  <title>Email &amp; Calendar | IT Self-Help Portal</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏦</text></svg>" />
+</head>
+<body>
+
+<!-- Skip to content (accessibility) -->
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<!-- ══════════════════ HEADER ══════════════════ -->
+<header id="site-header" role="banner">
+  <div class="header-inner">
+    <a href="index.html" class="header-logo" aria-label="IT Self-Help Portal Home">
+      <span class="lighthouse-icon" aria-hidden="true">🏦</span>
+      <span class="header-logo-text">
+        <span class="site-name">IT Self-Help Portal</span>
+        <span class="site-sub">Valley Credit Union</span>
+      </span>
+    </a>
+
+    <div class="search-wrapper" role="search">
+      <label for="search-input" class="visually-hidden">Search for help</label>
+      <input
+        type="search"
+        id="search-input"
+        placeholder="🔍  Search for help… (e.g. printer, password, VPN)"
+        autocomplete="off"
+        spellcheck="false"
+      />
+      <button class="search-btn" aria-label="Search">&#128269;</button>
+    </div>
+
+    <button id="theme-toggle" aria-label="Switch to dark mode">🌙 Dark</button>
+    <a href="#call-it-section" class="call-it-badge">📞 Call IT Now</a>
+  </div>
+</header>
+
+<!-- ══════════════════ CATEGORY NAV ══════════════════ -->
+<nav id="cat-nav" aria-label="Help Categories">
+  <div class="cat-nav-inner">
+    <a href="index.html" class="cat-nav-home">🏠 Home</a>
+    <a href="passwords.html" class="cat-nav-link" aria-label="Passwords &amp; Accounts">🔐 Passwords</a>
+    <a href="network.html" class="cat-nav-link" aria-label="Internet &amp; Network">🌐 Network</a>
+    <a href="email.html" class="cat-nav-link active" aria-label="Email &amp; Calendar">📧 Email</a>
+    <a href="printers.html" class="cat-nav-link" aria-label="Printers &amp; Scanners">🖨️ Printers</a>
+    <a href="computer.html" class="cat-nav-link" aria-label="Computer Performance">💻 Computer</a>
+    <a href="phones.html" class="cat-nav-link" aria-label="Phones &amp; Teams">📞 Phones</a>
+    <a href="banking.html" class="cat-nav-link" aria-label="Core Banking Systems">🏦 Banking</a>
+  </div>
+</nav>
+
+<!-- ══════════════════ MAIN ══════════════════ -->
+<main id="main-content">
+
+  <!-- Search results (hidden until user searches) -->
+  <section id="search-results-section" aria-label="Search Results">
+    <div class="section-header">
+      <h2>Search Results</h2>
+      <div class="section-divider"></div>
+    </div>
+    <ul class="search-results-list" id="search-results-list" aria-live="polite"></ul>
+  </section>
+
+  <!-- No results message -->
+  <div id="no-results" role="status" aria-live="polite">
+    <div class="no-results-icon">🌊</div>
+    <h3>Nothing washed ashore…</h3>
+    <p>
+      Couldn't find a match. Try different words, or browse the other categories using the nav bar above.
+      If all else fails, <a href="#call-it-section">give IT a shout</a>!
+    </p>
+  </div>
+
+  <div id="main-categories">
+    <section class="category-section" id="cat-email" aria-labelledby="h-email">
+          <div class="category-header">
+            <div class="category-icon icon-bg-purple" aria-hidden="true">📧</div>
+            <div>
+              <h2 id="h-email">Email &amp; Calendar</h2>
+              <p class="category-desc">Outlook, Microsoft 365, calendars, and shared mailboxes.</p>
+            </div>
+          </div>
+    
+          <div class="guides-grid">
+    
+            <div class="guide-card" data-id="email-outlook">
+              <div class="guide-header">
+                <div class="guide-title-area">
+                  <div class="guide-title">📭 Outlook won't open or is frozen</div>
+                  <div class="guide-tags">
+                    <span class="guide-tag tag-common">Common</span>
+                    <span class="guide-tag tag-easy">Easy Fix</span>
+                  </div>
+                </div>
+                <span class="guide-chevron" aria-hidden="true">▼</span>
+              </div>
+              <div class="guide-body">
+                <div class="guide-content">
+                  <p class="guide-intro">Outlook can get grumpy sometimes. Here's how to coax it back to life.</p>
+                  <ol class="steps-list">
+                    <li>
+                      <span class="step-num">1</span>
+                      <span class="step-text">Hold <code>Ctrl</code> + <code>Alt</code> + <code>Delete</code> → click <strong>"Task Manager"</strong>. Find <strong>Microsoft Outlook</strong> in the list, click it, then click <strong>"End Task"</strong>.</span>
+                    </li>
+                    <li>
+                      <span class="step-num">2</span>
+                      <span class="step-text">Wait 10 seconds, then reopen Outlook from your desktop or Start menu.</span>
+                    </li>
+                    <li>
+                      <span class="step-num">3</span>
+                      <span class="step-text">If it's stuck on a <strong>"Loading Profile…"</strong> screen, close it via Task Manager and hold <code>Ctrl</code> while clicking the Outlook icon. Choose <strong>"Safe Mode"</strong> to open without add-ins.</span>
+                    </li>
+                    <li>
+                      <span class="step-num">4</span>
+                      <span class="step-text">If Safe Mode works fine, an add-in is the culprit. Go to <strong>File → Options → Add-ins</strong> and disable them one by one.</span>
+                    </li>
+                    <li>
+                      <span class="step-num">5</span>
+                      <span class="step-text">Try <strong>restarting your computer</strong> — this is the classic fix that works more often than not!</span>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+    
+            <div class="guide-card" data-id="email-send-receive">
+              <div class="guide-header">
+                <div class="guide-title-area">
+                  <div class="guide-title">📬 Can't send or receive emails</div>
+                  <div class="guide-tags">
+                    <span class="guide-tag tag-common">Common</span>
+                    <span class="guide-tag tag-moderate">Moderate</span>
+                  </div>
+                </div>
+                <span class="guide-chevron" aria-hidden="true">▼</span>
+              </div>
+              <div class="guide-body">
+                <div class="guide-content">
+                  <p class="guide-intro">Before you panic, let's check a few things first.</p>
+                  <ol class="steps-list">
+                    <li>
+                      <span class="step-num">1</span>
+                      <span class="step-text">Check the <strong>bottom status bar</strong> in Outlook. Does it say "Disconnected" or "Working Offline"? If so, go to <strong>Send/Receive tab → Work Offline</strong> to toggle it off.</span>
+                    </li>
+                    <li>
+                      <span class="step-num">2</span>
+                      <span class="step-text">Make sure you have <strong>internet access</strong>. Try opening a website in your browser.</span>
+                    </li>
+                    <li>
+                      <span class="step-num">3</span>
+                      <span class="step-text">Click <strong>Send/Receive → Send All</strong> (the envelope with a blue arrow). Check your <strong>Outbox</strong> folder — stuck messages will be there.</span>
+                    </li>
+                    <li>
+                      <span class="step-num">4</span>
+                      <span class="step-text">Log in to <code>outlook.office.com</code> in your browser. If email works there, the problem is with the Outlook app, not your account.</span>
+                    </li>
+                    <li>
+                      <span class="step-num">5</span>
+                      <span class="step-text">Restart Outlook completely (Task Manager → End Task → reopen).</span>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+    
+            <div class="guide-card" data-id="email-full">
+              <div class="guide-header">
+                <div class="guide-title-area">
+                  <div class="guide-title">📦 Mailbox is full / emails are bouncing</div>
+                  <div class="guide-tags">
+                    <span class="guide-tag tag-easy">Easy Fix</span>
+                  </div>
+                </div>
+                <span class="guide-chevron" aria-hidden="true">▼</span>
+              </div>
+              <div class="guide-body">
+                <div class="guide-content">
+                  <p class="guide-intro">When your mailbox fills up, new emails start bouncing back to senders. Let's clear some space!</p>
+                  <ol class="steps-list">
+                    <li>
+                      <span class="step-num">1</span>
+                      <span class="step-text">Empty your <strong>Deleted Items</strong> folder: right-click it → <strong>"Empty Folder"</strong>.</span>
+                    </li>
+                    <li>
+                      <span class="step-num">2</span>
+                      <span class="step-text">Empty your <strong>Junk Email</strong> folder: right-click it → <strong>"Empty Folder"</strong>.</span>
+                    </li>
+                    <li>
+                      <span class="step-num">3</span>
+                      <span class="step-text">In your Inbox, sort by <strong>size</strong> (View → Arrange by → Size) and delete any large emails or attachments you no longer need.</span>
+                    </li>
+                    <li>
+                      <span class="step-num">4</span>
+                      <span class="step-text">Save important <strong>attachments to OneDrive</strong> or a file share, then delete them from the email to free up space.</span>
+                    </li>
+                  </ol>
+                  <div class="tip-box">
+                    <span class="box-icon">💡</span>
+                    <span>Our mailboxes have a 50 GB limit. If you're regularly hitting it, talk to IT about archiving options or cleaning up shared mailboxes.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+            <div class="guide-card" data-id="email-calendar">
+              <div class="guide-header">
+                <div class="guide-title-area">
+                  <div class="guide-title">📅 Calendar won't sync or meetings are missing</div>
+                  <div class="guide-tags">
+                    <span class="guide-tag tag-easy">Easy Fix</span>
+                  </div>
+                </div>
+                <span class="guide-chevron" aria-hidden="true">▼</span>
+              </div>
+              <div class="guide-body">
+                <div class="guide-content">
+                  <p class="guide-intro">Missing meetings can cause real headaches. Here's how to get your calendar back in sync.</p>
+                  <ol class="steps-list">
+                    <li>
+                      <span class="step-num">1</span>
+                      <span class="step-text">In Outlook, go to <strong>Send/Receive → Send All</strong> to force a sync.</span>
+                    </li>
+                    <li>
+                      <span class="step-num">2</span>
+                      <span class="step-text">Close Outlook and reopen it. Calendar data often refreshes on startup.</span>
+                    </li>
+                    <li>
+                      <span class="step-num">3</span>
+                      <span class="step-text">Check <code>outlook.office.com</code> in a browser — if the meeting is there, the app sync is the issue and a restart should fix it.</span>
+                    </li>
+                    <li>
+                      <span class="step-num">4</span>
+                      <span class="step-text">If meetings sent by others are missing, ask the organizer to resend the invite.</span>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+    
+            <div class="guide-card" data-id="email-spam">
+              <div class="guide-header">
+                <div class="guide-title-area">
+                  <div class="guide-title">🚫 Legitimate email going to Junk / Spam</div>
+                  <div class="guide-tags">
+                    <span class="guide-tag tag-easy">Easy Fix</span>
+                  </div>
+                </div>
+                <span class="guide-chevron" aria-hidden="true">▼</span>
+              </div>
+              <div class="guide-body">
+                <div class="guide-content">
+                  <p class="guide-intro">Sometimes the spam filter is a bit over-eager. Here's how to tell it to stand down.</p>
+                  <ol class="steps-list">
+                    <li>
+                      <span class="step-num">1</span>
+                      <span class="step-text">Find the email in your <strong>Junk Email</strong> folder.</span>
+                    </li>
+                    <li>
+                      <span class="step-num">2</span>
+                      <span class="step-text">Right-click it → <strong>Junk → Not Junk</strong>. Outlook will move it to your inbox and remember this sender.</span>
+                    </li>
+                    <li>
+                      <span class="step-num">3</span>
+                      <span class="step-text">To be safe, add the sender to your Safe Senders list: <strong>Home tab → Junk → Junk E-mail Options → Safe Senders → Add</strong>.</span>
+                    </li>
+                  </ol>
+                  <div class="warn-box">
+                    <span class="box-icon">⚠️</span>
+                    <span>Be careful! Sometimes real phishing emails end up in your inbox. When in doubt whether an email is legitimate, <strong>do not click links</strong> — forward it to IT for review.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+          </div>
+        </section>
+
+    <!-- Call IT Section -->
+    <section id="call-it-section" aria-labelledby="h-callit">
+          <div class="call-it-top">
+            <span class="call-it-emoji" aria-hidden="true">🚨</span>
+            <div>
+              <h2 id="h-callit">Stop Troubleshooting — Call IT Right Now</h2>
+              <p>
+                Some situations go beyond self-help. If any of the following apply to you,
+                <strong>put down the mouse</strong> and give us a call straight away.
+                At the credit union, protecting member data is our top priority.
+              </p>
+            </div>
+          </div>
+    
+          <div class="call-it-grid">
+            <div class="call-it-item">
+              <span class="ci-icon" aria-hidden="true">🦠</span>
+              <span>You see <strong>pop-ups demanding payment</strong>, or your files appear to be encrypted with a ransom note.</span>
+            </div>
+            <div class="call-it-item">
+              <span class="ci-icon" aria-hidden="true">🔓</span>
+              <span>You suspect <strong>your account has been hacked</strong> or someone else is accessing your computer remotely.</span>
+            </div>
+            <div class="call-it-item">
+              <span class="ci-icon" aria-hidden="true">📧</span>
+              <span>You <strong>clicked a link or opened an attachment</strong> in a suspicious email and now something feels wrong.</span>
+            </div>
+            <div class="call-it-item">
+              <span class="ci-icon" aria-hidden="true">🏦</span>
+              <span>The <strong>core banking system is completely down</strong> and members are waiting at the counter.</span>
+            </div>
+            <div class="call-it-item">
+              <span class="ci-icon" aria-hidden="true">💾</span>
+              <span>You accidentally <strong>deleted important member or financial data</strong> that cannot be recovered locally.</span>
+            </div>
+            <div class="call-it-item">
+              <span class="ci-icon" aria-hidden="true">🔥</span>
+              <span>Your computer is <strong>making unusual noises, smells like burning</strong>, or is physically damaged.</span>
+            </div>
+            <div class="call-it-item">
+              <span class="ci-icon" aria-hidden="true">🔒</span>
+              <span>Your <strong>account is fully locked out</strong> and you cannot access anything — email, Windows, or banking.</span>
+            </div>
+            <div class="call-it-item">
+              <span class="ci-icon" aria-hidden="true">📞</span>
+              <span>Someone calls claiming to be <strong>"IT support"</strong> asking for your password or remote access. <em>Hang up.</em> Call us to verify.</span>
+            </div>
+            <div class="call-it-item">
+              <span class="ci-icon" aria-hidden="true">⚠️</span>
+              <span>You see an <strong>unfamiliar error message</strong> on a banking screen that you've never seen before and don't understand.</span>
+            </div>
+            <div class="call-it-item">
+              <span class="ci-icon" aria-hidden="true">🖥️</span>
+              <span>Your computer <strong>gets a Blue Screen repeatedly</strong> — more than once in a short period.</span>
+            </div>
+            <div class="call-it-item">
+              <span class="ci-icon" aria-hidden="true">👤</span>
+              <span>You notice a <strong>new user account or program installed</strong> on your computer that you didn't create.</span>
+            </div>
+            <div class="call-it-item">
+              <span class="ci-icon" aria-hidden="true">🌐</span>
+              <span>The <strong>entire branch has lost network/internet</strong> access and there's no known outage listed above.</span>
+            </div>
+          </div>
+    
+          <div class="call-it-contact" role="region" aria-label="IT Contact Information">
+            <div class="contact-method">
+              <span class="cm-icon" aria-hidden="true">📧</span>
+              <span>
+                <span class="cm-label">Email (non-urgent)</span>
+                <span class="cm-value">tburchell@valleycreditunion.com · pmoore@valleycreditunion.com</span>
+              </span>
+            </div>
+            <div class="contact-method">
+              <span class="cm-icon" aria-hidden="true">💬</span>
+              <span>
+                <span class="cm-label">Teams Chat</span>
+                <span class="cm-value">IT Support</span>
+              </span>
+            </div>
+            <div class="contact-method">
+              <span class="cm-icon" aria-hidden="true">🕐</span>
+              <span>
+                <span class="cm-label">Hours</span>
+                <span class="cm-value">Mon–Fri · 8:30 am – 4:30 pm</span>
+              </span>
+            </div>
+          </div>
+        </section>
+  </div><!-- /#main-categories -->
+</main>
+
+<!-- Back to top -->
+<button id="back-to-top" aria-label="Back to top" title="Back to top">▲</button>
+
+<!-- ══════════════════ FOOTER ══════════════════ -->
+<footer id="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-logo" aria-hidden="true">⚓</div>
+    <p><strong>IT Self-Help Portal</strong> &nbsp;·&nbsp; Valley Credit Union</p>
+    <p class="footer-tagline">"We're always here to help but if you are a self starter, try these first!"</p>
+    <p>If you've tried everything and still need help, we're always happy to lend a hand.<br />
+       Teams message the <strong>IT Support</strong> channel.</p>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="passwords.html">Passwords</a>
+      <a href="network.html">Network</a>
+      <a href="email.html">Email</a>
+      <a href="printers.html">Printers</a>
+      <a href="computer.html">Computer</a>
+      <a href="phones.html">Phones</a>
+      <a href="banking.html">Banking</a>
+    </div>
+    <p style="margin-top: 16px; opacity: 0.5; font-size: 0.78rem;">
+      &copy; <span id="footer-year"></span> Valley Credit Union &nbsp;·&nbsp; For internal staff use only
+    </p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  // Set footer year dynamically
+  document.getElementById('footer-year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

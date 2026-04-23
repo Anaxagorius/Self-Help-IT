@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="IT Self-Help Portal for Valley Credit Union staff – troubleshoot common problems before calling the IT Service Desk." />
+  <title>Printers &amp; Scanners | IT Self-Help Portal</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏦</text></svg>" />
+</head>
+<body>
+
+<!-- Skip to content (accessibility) -->
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<!-- ══════════════════ HEADER ══════════════════ -->
+<header id="site-header" role="banner">
+  <div class="header-inner">
+    <a href="index.html" class="header-logo" aria-label="IT Self-Help Portal Home">
+      <span class="lighthouse-icon" aria-hidden="true">🏦</span>
+      <span class="header-logo-text">
+        <span class="site-name">IT Self-Help Portal</span>
+        <span class="site-sub">Valley Credit Union</span>
+      </span>
+    </a>
+
+    <div class="search-wrapper" role="search">
+      <label for="search-input" class="visually-hidden">Search for help</label>
+      <input
+        type="search"
+        id="search-input"
+        placeholder="🔍  Search for help… (e.g. printer, password, VPN)"
+        autocomplete="off"
+        spellcheck="false"
+      />
+      <button class="search-btn" aria-label="Search">&#128269;</button>
+    </div>
+
+    <button id="theme-toggle" aria-label="Switch to dark mode">🌙 Dark</button>
+    <a href="#call-it-section" class="call-it-badge">📞 Call IT Now</a>
+  </div>
+</header>
+
+<!-- ══════════════════ CATEGORY NAV ══════════════════ -->
+<nav id="cat-nav" aria-label="Help Categories">
+  <div class="cat-nav-inner">
+    <a href="index.html" class="cat-nav-home">🏠 Home</a>
+    <a href="passwords.html" class="cat-nav-link" aria-label="Passwords &amp; Accounts">🔐 Passwords</a>
+    <a href="network.html" class="cat-nav-link" aria-label="Internet &amp; Network">🌐 Network</a>
+    <a href="email.html" class="cat-nav-link" aria-label="Email &amp; Calendar">📧 Email</a>
+    <a href="printers.html" class="cat-nav-link active" aria-label="Printers &amp; Scanners">🖨️ Printers</a>
+    <a href="computer.html" class="cat-nav-link" aria-label="Computer Performance">💻 Computer</a>
+    <a href="phones.html" class="cat-nav-link" aria-label="Phones &amp; Teams">📞 Phones</a>
+    <a href="banking.html" class="cat-nav-link" aria-label="Core Banking Systems">🏦 Banking</a>
+  </div>
+</nav>
+
+<!-- ══════════════════ MAIN ══════════════════ -->
+<main id="main-content">
+
+  <!-- Search results (hidden until user searches) -->
+  <section id="search-results-section" aria-label="Search Results">
+    <div class="section-header">
+      <h2>Search Results</h2>
+      <div class="section-divider"></div>
+    </div>
+    <ul class="search-results-list" id="search-results-list" aria-live="polite"></ul>
+  </section>
+
+  <!-- No results message -->
+  <div id="no-results" role="status" aria-live="polite">
+    <div class="no-results-icon">🌊</div>
+    <h3>Nothing washed ashore…</h3>
+    <p>
+      Couldn't find a match. Try different words, or browse the other categories using the nav bar above.
+      If all else fails, <a href="#call-it-section">give IT a shout</a>!
+    </p>
+  </div>
+
+  <div id="main-categories">
+    <section class="category-section" id="cat-printers" aria-labelledby="h-printers">
+          <div class="category-header">
+            <div class="category-icon icon-bg-orange" aria-hidden="true">🖨️</div>
+            <div>
+              <h2 id="h-printers">Printers &amp; Scanners</h2>
+              <p class="category-desc">The classics — paper jams, missing printers, and scanner woes.</p>
+            </div>
+          </div>
+    
+          <div class="guides-grid">
+    
+            <div class="guide-card" data-id="print-noprint">
+              <div class="guide-header">
+                <div class="guide-title-area">
+                  <div class="guide-title">🖨️ Printer isn't printing anything</div>
+                  <div class="guide-tags">
+                    <span class="guide-tag tag-common">Most Common</span>
+                    <span class="guide-tag tag-easy">Easy Fix</span>
+                  </div>
+                </div>
+                <span class="guide-chevron" aria-hidden="true">▼</span>
+              </div>
+              <div class="guide-body">
+                <div class="guide-content">
+                  <p class="guide-intro">Nine times out of ten, it's one of these simple things. Walk through them in order.</p>
+                  <ol class="steps-list">
+                    <li>
+                      <span class="step-num">1</span>
+                      <span class="step-text">Look at the printer itself — is it <strong>powered on</strong>? Is the power light steady (not blinking red)?</span>
+                    </li>
+                    <li>
+                      <span class="step-num">2</span>
+                      <span class="step-text">Check the <strong>paper tray</strong> — is there paper loaded? Is it jammed? (See the paper jam guide below.)</span>
+                    </li>
+                    <li>
+                      <span class="step-num">3</span>
+                      <span class="step-text">On your computer, go to <strong>Start → Settings → Bluetooth &amp; devices → Printers &amp; scanners</strong>. Find your printer and click <strong>"Open print queue"</strong>. Delete any stuck jobs (right-click → Cancel).</span>
+                    </li>
+                    <li>
+                      <span class="step-num">4</span>
+                      <span class="step-text">Right-click the printer in the Printers list → <strong>"Set as default printer"</strong> if it isn't already.</span>
+                    </li>
+                    <li>
+                      <span class="step-num">5</span>
+                      <span class="step-text"><strong>Restart the Print Spooler service:</strong> Press <code>Windows</code> key, type <strong>Services</strong>, open it, scroll to <strong>Print Spooler</strong>, right-click → <strong>Restart</strong>.</span>
+                    </li>
+                    <li>
+                      <span class="step-num">6</span>
+                      <span class="step-text">Try printing a test page: right-click the printer → <strong>"Printer properties" → "Print Test Page"</strong>.</span>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+    
+            <div class="guide-card" data-id="print-jam">
+              <div class="guide-header">
+                <div class="guide-title-area">
+                  <div class="guide-title">📄 Paper jam</div>
+                  <div class="guide-tags">
+                    <span class="guide-tag tag-easy">Easy Fix</span>
+                  </div>
+                </div>
+                <span class="guide-chevron" aria-hidden="true">▼</span>
+              </div>
+              <div class="guide-body">
+                <div class="guide-content">
+                  <p class="guide-intro">Paper jams are annoying but rarely serious. Take your time — rushing can tear the paper and make it worse.</p>
+                  <ol class="steps-list">
+                    <li>
+                      <span class="step-num">1</span>
+                      <span class="step-text"><strong>Turn off the printer</strong> first. This releases the rollers and makes it easier to remove the paper safely.</span>
+                    </li>
+                    <li>
+                      <span class="step-num">2</span>
+                      <span class="step-text">Gently open all access panels (front, back, and the paper tray). Look inside with a flashlight if needed.</span>
+                    </li>
+                    <li>
+                      <span class="step-num">3</span>
+                      <span class="step-text">Carefully <strong>pull the jammed paper in the direction it feeds</strong> (usually forward, in the direction the paper would have come out). Pull slowly and evenly — don't yank!</span>
+                    </li>
+                    <li>
+                      <span class="step-num">4</span>
+                      <span class="step-text">Remove all pieces — even tiny bits. A scrap left inside will cause more jams.</span>
+                    </li>
+                    <li>
+                      <span class="step-num">5</span>
+                      <span class="step-text">Close all panels, power the printer back on, and try printing again.</span>
+                    </li>
+                  </ol>
+                  <div class="call-box">
+                    <span class="box-icon">📞</span>
+                    <span>If you can't locate or safely remove the paper, or the printer shows a jam error with no visible paper, <strong>stop and call IT</strong>. Forcing it could damage the rollers.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+            <div class="guide-card" data-id="print-notfound">
+              <div class="guide-header">
+                <div class="guide-title-area">
+                  <div class="guide-title">🔍 Can't find the printer in the list</div>
+                  <div class="guide-tags">
+                    <span class="guide-tag tag-moderate">Moderate</span>
+                  </div>
+                </div>
+                <span class="guide-chevron" aria-hidden="true">▼</span>
+              </div>
+              <div class="guide-body">
+                <div class="guide-content">
+                  <p class="guide-intro">This often happens after a computer update or when using a different machine.</p>
+                  <ol class="steps-list">
+                    <li>
+                      <span class="step-num">1</span>
+                      <span class="step-text">Go to <strong>Start → Settings → Bluetooth &amp; devices → Printers &amp; scanners → Add a printer or scanner</strong>. Wait for Windows to scan the network.</span>
+                    </li>
+                    <li>
+                      <span class="step-num">2</span>
+                      <span class="step-text">If the printer doesn't appear, click <strong>"The printer that I want isn't listed"</strong> and choose <strong>"Find a printer by name"</strong>. Enter the printer name (ask a colleague or check the label on the printer).</span>
+                    </li>
+                    <li>
+                      <span class="step-num">3</span>
+                      <span class="step-text">Make sure you're connected to the <strong>office network</strong> (not guest Wi-Fi) — printers are only accessible on the internal network.</span>
+                    </li>
+                  </ol>
+                  <div class="call-box">
+                    <span class="box-icon">📞</span>
+                    <span>If you can't add the printer after these steps, IT will need to push the printer to your computer remotely. Give us a call!</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+            <div class="guide-card" data-id="print-scanner">
+              <div class="guide-header">
+                <div class="guide-title-area">
+                  <div class="guide-title">📠 Scanner not scanning / not recognized</div>
+                  <div class="guide-tags">
+                    <span class="guide-tag tag-moderate">Moderate</span>
+                  </div>
+                </div>
+                <span class="guide-chevron" aria-hidden="true">▼</span>
+              </div>
+              <div class="guide-body">
+                <div class="guide-content">
+                  <p class="guide-intro">Most of our scanners are part of the multifunction printers. Here's how to get them scanning again.</p>
+                  <ol class="steps-list">
+                    <li>
+                      <span class="step-num">1</span>
+                      <span class="step-text">Ensure the <strong>document is properly placed</strong> on the glass or in the document feeder. Make sure nothing is sticking out.</span>
+                    </li>
+                    <li>
+                      <span class="step-num">2</span>
+                      <span class="step-text">Open <strong>Windows Fax and Scan</strong> (search in Start menu) and try scanning from there.</span>
+                    </li>
+                    <li>
+                      <span class="step-num">3</span>
+                      <span class="step-text">Power-cycle the printer/scanner: turn it off, wait 30 seconds, turn it back on.</span>
+                    </li>
+                    <li>
+                      <span class="step-num">4</span>
+                      <span class="step-text">If using the scan-to-email feature, make sure the email address on file is your current work email. Check with IT if you've recently changed accounts.</span>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+    
+          </div>
+        </section>
+
+    <!-- Call IT Section -->
+    <section id="call-it-section" aria-labelledby="h-callit">
+          <div class="call-it-top">
+            <span class="call-it-emoji" aria-hidden="true">🚨</span>
+            <div>
+              <h2 id="h-callit">Stop Troubleshooting — Call IT Right Now</h2>
+              <p>
+                Some situations go beyond self-help. If any of the following apply to you,
+                <strong>put down the mouse</strong> and give us a call straight away.
+                At the credit union, protecting member data is our top priority.
+              </p>
+            </div>
+          </div>
+    
+          <div class="call-it-grid">
+            <div class="call-it-item">
+              <span class="ci-icon" aria-hidden="true">🦠</span>
+              <span>You see <strong>pop-ups demanding payment</strong>, or your files appear to be encrypted with a ransom note.</span>
+            </div>
+            <div class="call-it-item">
+              <span class="ci-icon" aria-hidden="true">🔓</span>
+              <span>You suspect <strong>your account has been hacked</strong> or someone else is accessing your computer remotely.</span>
+            </div>
+            <div class="call-it-item">
+              <span class="ci-icon" aria-hidden="true">📧</span>
+              <span>You <strong>clicked a link or opened an attachment</strong> in a suspicious email and now something feels wrong.</span>
+            </div>
+            <div class="call-it-item">
+              <span class="ci-icon" aria-hidden="true">🏦</span>
+              <span>The <strong>core banking system is completely down</strong> and members are waiting at the counter.</span>
+            </div>
+            <div class="call-it-item">
+              <span class="ci-icon" aria-hidden="true">💾</span>
+              <span>You accidentally <strong>deleted important member or financial data</strong> that cannot be recovered locally.</span>
+            </div>
+            <div class="call-it-item">
+              <span class="ci-icon" aria-hidden="true">🔥</span>
+              <span>Your computer is <strong>making unusual noises, smells like burning</strong>, or is physically damaged.</span>
+            </div>
+            <div class="call-it-item">
+              <span class="ci-icon" aria-hidden="true">🔒</span>
+              <span>Your <strong>account is fully locked out</strong> and you cannot access anything — email, Windows, or banking.</span>
+            </div>
+            <div class="call-it-item">
+              <span class="ci-icon" aria-hidden="true">📞</span>
+              <span>Someone calls claiming to be <strong>"IT support"</strong> asking for your password or remote access. <em>Hang up.</em> Call us to verify.</span>
+            </div>
+            <div class="call-it-item">
+              <span class="ci-icon" aria-hidden="true">⚠️</span>
+              <span>You see an <strong>unfamiliar error message</strong> on a banking screen that you've never seen before and don't understand.</span>
+            </div>
+            <div class="call-it-item">
+              <span class="ci-icon" aria-hidden="true">🖥️</span>
+              <span>Your computer <strong>gets a Blue Screen repeatedly</strong> — more than once in a short period.</span>
+            </div>
+            <div class="call-it-item">
+              <span class="ci-icon" aria-hidden="true">👤</span>
+              <span>You notice a <strong>new user account or program installed</strong> on your computer that you didn't create.</span>
+            </div>
+            <div class="call-it-item">
+              <span class="ci-icon" aria-hidden="true">🌐</span>
+              <span>The <strong>entire branch has lost network/internet</strong> access and there's no known outage listed above.</span>
+            </div>
+          </div>
+    
+          <div class="call-it-contact" role="region" aria-label="IT Contact Information">
+            <div class="contact-method">
+              <span class="cm-icon" aria-hidden="true">📧</span>
+              <span>
+                <span class="cm-label">Email (non-urgent)</span>
+                <span class="cm-value">tburchell@valleycreditunion.com · pmoore@valleycreditunion.com</span>
+              </span>
+            </div>
+            <div class="contact-method">
+              <span class="cm-icon" aria-hidden="true">💬</span>
+              <span>
+                <span class="cm-label">Teams Chat</span>
+                <span class="cm-value">IT Support</span>
+              </span>
+            </div>
+            <div class="contact-method">
+              <span class="cm-icon" aria-hidden="true">🕐</span>
+              <span>
+                <span class="cm-label">Hours</span>
+                <span class="cm-value">Mon–Fri · 8:30 am – 4:30 pm</span>
+              </span>
+            </div>
+          </div>
+        </section>
+  </div><!-- /#main-categories -->
+</main>
+
+<!-- Back to top -->
+<button id="back-to-top" aria-label="Back to top" title="Back to top">▲</button>
+
+<!-- ══════════════════ FOOTER ══════════════════ -->
+<footer id="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-logo" aria-hidden="true">⚓</div>
+    <p><strong>IT Self-Help Portal</strong> &nbsp;·&nbsp; Valley Credit Union</p>
+    <p class="footer-tagline">"We're always here to help but if you are a self starter, try these first!"</p>
+    <p>If you've tried everything and still need help, we're always happy to lend a hand.<br />
+       Teams message the <strong>IT Support</strong> channel.</p>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="passwords.html">Passwords</a>
+      <a href="network.html">Network</a>
+      <a href="email.html">Email</a>
+      <a href="printers.html">Printers</a>
+      <a href="computer.html">Computer</a>
+      <a href="phones.html">Phones</a>
+      <a href="banking.html">Banking</a>
+    </div>
+    <p style="margin-top: 16px; opacity: 0.5; font-size: 0.78rem;">
+      &copy; <span id="footer-year"></span> Valley Credit Union &nbsp;·&nbsp; For internal staff use only
+    </p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  // Set footer year dynamically
+  document.getElementById('footer-year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

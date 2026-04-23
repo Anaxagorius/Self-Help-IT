@@ -427,7 +427,7 @@ main {
 /* ---------- Category Sections ---------- */
 .category-section {
   margin-bottom: 48px;
-  scroll-margin-top: 90px;
+  scroll-margin-top: 130px;
 }
 
 .category-header {
@@ -660,7 +660,7 @@ main {
   box-shadow: var(--shadow-lg);
   position: relative;
   overflow: hidden;
-  scroll-margin-top: 90px;
+  scroll-margin-top: 130px;
 }
 
 #call-it-section::before {
@@ -877,6 +877,128 @@ main {
 .label-warn { background: #fff3cd; color: var(--gold); }
 .label-down { background: var(--red-bg); color: var(--red-alert); }
 
+/* ---------- Category Navigation Bar ---------- */
+#cat-nav {
+  background: var(--navy-dark);
+  border-bottom: 2px solid var(--seafoam);
+  position: sticky;
+  top: 68px;
+  z-index: 99;
+  box-shadow: var(--shadow-sm);
+}
+
+.cat-nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.cat-nav-inner::-webkit-scrollbar { display: none; }
+
+.cat-nav-link, .cat-nav-home {
+  color: rgba(255,255,255,.75);
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 10px 14px;
+  white-space: nowrap;
+  border-bottom: 3px solid transparent;
+  transition: color var(--transition), border-color var(--transition), background var(--transition);
+  letter-spacing: 0.2px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.cat-nav-home {
+  border-right: 1px solid rgba(255,255,255,.12);
+  margin-right: 4px;
+}
+
+.cat-nav-link:hover, .cat-nav-home:hover {
+  color: var(--white);
+  background: rgba(255,255,255,.06);
+  border-bottom-color: var(--seafoam-lt);
+}
+
+.cat-nav-link.active {
+  color: var(--seafoam-lt);
+  border-bottom-color: var(--seafoam-lt);
+}
+
+/* ---------- Theme Toggle ---------- */
+#theme-toggle {
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.25);
+  color: var(--white);
+  border-radius: 50px;
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition);
+  white-space: nowrap;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+#theme-toggle:hover {
+  background: rgba(255,255,255,.22);
+  transform: scale(1.05);
+}
+
+/* ---------- Dark Mode ---------- */
+body.dark-mode {
+  --light-gray:  #14161f;
+  --mid-gray:    #272b3a;
+  --white:       #1e2130;
+  --text-dark:   #dde1ed;
+  --text-mid:    #8b93ad;
+  --navy:        #5b8dd9;
+  --navy-dark:   #0e1422;
+  --navy-light:  #3a6ab0;
+  --seafoam:     #3b9080;
+  --seafoam-lt:  #5cb5a4;
+  --seafoam-bg:  #162624;
+  --green-bg:    #122515;
+  --red-bg:      #231010;
+  --shadow-sm:   0 1px 4px rgba(0,0,0,.35);
+  --shadow-md:   0 4px 14px rgba(0,0,0,.4);
+  --shadow-lg:   0 8px 28px rgba(0,0,0,.5);
+}
+
+body.dark-mode .icon-bg-blue   { background: #1a2a45; }
+body.dark-mode .icon-bg-green  { background: #122515; }
+body.dark-mode .icon-bg-purple { background: #1e1535; }
+body.dark-mode .icon-bg-orange { background: #2a1a08; }
+body.dark-mode .icon-bg-red    { background: #231010; }
+body.dark-mode .icon-bg-teal   { background: #0e2520; }
+body.dark-mode .icon-bg-indigo { background: #171a38; }
+
+body.dark-mode .tag-easy     { background: #122515; color: #4ade80; }
+body.dark-mode .tag-moderate { background: #2a1a08; color: #fb923c; }
+body.dark-mode .tag-call-it  { background: #231010; color: #f87171; }
+body.dark-mode .tag-common   { background: #1a2a45; color: #60a5fa; }
+
+body.dark-mode .label-ok   { background: #122515; color: #4ade80; }
+body.dark-mode .label-warn { background: #2a1a08; color: #fb923c; }
+body.dark-mode .label-down { background: #231010; color: #f87171; }
+
+body.dark-mode #alert-banner {
+  background: #2a1f08;
+  color: #fbbf24;
+  border-left-color: var(--gold);
+}
+
+body.dark-mode mark {
+  background: #4a3a00;
+  color: var(--text-dark);
+}
+
 /* ---------- Back to Top ---------- */
 #back-to-top {
   position: fixed;
@@ -975,6 +1097,8 @@ mark {
   .header-inner { gap: 12px; }
   .call-it-badge { display: none; }
 
+  #theme-toggle { font-size: 0.78rem; padding: 5px 10px; }
+
   .guides-grid {
     grid-template-columns: 1fr;
   }
@@ -992,6 +1116,10 @@ mark {
   .call-it-contact { flex-direction: column; gap: 16px; }
 
   .hero-stats { gap: 20px; }
+
+  #cat-nav { top: 58px; }
+  .cat-nav-inner { padding: 0 12px; }
+  .cat-nav-link, .cat-nav-home { font-size: 0.73rem; padding: 9px 10px; }
 }
 
 @media (max-width: 480px) {
